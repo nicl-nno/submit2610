@@ -1,0 +1,888 @@
+Please read the paper on artificial intelligence in latex format and evaluate it based on the following criteria.
+
+**Appropriateness (1-5)**
+Does this paper fit in the event? Both empirical and theoretical results are welcome.
+5: Certainly.
+4: Probably.
+3: Unsure.
+2: Probably not.
+1: Certainly not.
+
+**Clarity (1-5)**
+For the reasonably well-prepared reader, is it clear what was done and why? Is the paper well-written and well-structured?
+5 = Very clear.
+4 = Understandable by most readers.
+3 = Mostly understandable to me with some effort.
+2 = Important questions were hard to resolve even with effort.
+1 = Much of the paper is confusing.
+
+**Originality / Innovativeness (1-5)**
+How original is the approach? Does this paper break new ground in topic, methodology, or content? How exciting and innovative is the research it describes?
+Note that a paper could score high for originality even if the results do not show a convincing benefit.
+5 = Surprising: Noteworthy new problem, technique, methodology, or insight.
+4 = Creative: Relatively few people in our community would have put these ideas together.
+3 = Somewhat conventional: A number of people could have come up with this if they thought about it for a while.
+2 = Rather boring: Obvious, or a minor improvement on familiar techniques.
+1 = Significant portions have actually been done before or done better.
+
+**Soundness / Correctness (1-5)**
+First, is the technical approach sound and well-chosen? Second, can one trust the claims of the paper -- are they supported by proper experiments, proofs, or other argumentation?
+5 = The approach is very apt, and the claims are convincingly supported.
+4 = Generally solid work, though I have a few suggestions about how to strengthen the technical approach or evaluation.
+3 = Fairly reasonable work. The approach is not bad, and at least the main claims are probably correct, but I am not entirely ready to accept them (based on the material in the paper).
+2 = Troublesome. There are some ideas worth salvaging here, but the work should really have been done or evaluated differently, or justified better.
+1 = Fatally flawed.
+
+**Meaningful Comparison (1-5)**
+Does the author make clear where the problems and methods sit with respect to existing literature? Are the references adequate? Are any experimental results meaningfully compared with the best prior approaches?
+5 = Precise and complete comparison with related work. Good job given the space constraints.
+4 = Mostly solid bibliography and comparison, but I have some suggestions.
+3 = Bibliography and comparison are somewhat helpful, but it could be hard for a reader to determine exactly how this work relates to previous work.
+2 = Only partial awareness and understanding of related work, or a flawed empirical comparison.
+1 = Little awareness of related work, or lacks necessary empirical comparison.
+
+**Thoroughness (1-5)**
+Does this paper have enough substance, or would it benefit from more ideas or results?
+Note that this question mainly concerns the amount of work; its quality is evaluated in other categories.
+5 = Contains more ideas or results than most publications in this conference; goes the extra mile.
+4 = Represents an appropriate amount of work for a publication in this conference. (most submissions)
+3 = Leaves open one or two natural questions that should have been pursued within the paper.
+2 = Work in progress. There are enough good ideas, but perhaps not enough results yet.
+1 = Seems thin. Not enough ideas here for a full-length paper.
+
+**Recommendation (1-5)**
+What is your overall recommendation for this paper?
+In deciding on your ultimate recommendation, please think over all your scores above. But remember that no paper is perfect, and remember that we want a conference full of interesting, diverse, and timely work. If a paper has some weaknesses, but you really got a lot out of it, feel free to fight for it. If a paper is solid but you could live without it, let us know that you're ambivalent. Remember also that the author has a couple of weeks to address reviewer comments before the camera-ready deadline.
+Should the paper be accepted or rejected?
+5 = Exciting: I'd fight to get it accepted
+4 = Worthy: I would like to see it accepted
+3 = Borderline: I'm ambivalent about this one
+2 = Mediocre: I'd rather not see it in the conference
+1 = Poor: I'd fight to have it rejected
+
+**Reviewer Confidence (1-5)**
+5 = Positive that my evaluation is correct. I read the paper very carefully and am very familiar with related work.
+4 = Quite sure. I tried to check the important points carefully, and checked for uncited prior work. It's unlikely, though conceivable, that I missed something that should affect my ratings.
+3 = Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty.
+2 = Willing to defend evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work.
+1 = Not my area, or paper is very hard to understand. My evaluation is just an educated guess.
+
+**Recommendation for Best Paper Award (1-3)**
+3 = Definitely
+2 = Maybe
+1 = Definitely not
+
+The paper:
+```text
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{multirow}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\begin{quote}
+\textbf{UMUTeam at SemEval-2025 Task 7: Multilingual Fact-Checked Claim
+Retrieval with XLM-RoBERTa and Self-Alignment Pretraining Strategy}
+\end{quote}
+
+\textbf{Ronghao Pan}1\textbf{, Tomás Bernal-Beltrán}1\textbf{, José
+Antonio García-Díaz}1\textbf{, Rafael Valencia-García}1 1 Facultad de
+Informática, Universidad de Murcia, Campus de Espinardo, 30100 Murcia,
+Spain
+
+\{ronghao.pan, tomas.bernalb, joseantonio.garcia8, valencia\}@um.es
+
+\textbf{Abstract}
+
+\begin{quote}
+In today's digital age, the rapid dissemination of information through
+social networks poses significant challenges in verifying the veracity
+of shared content. The proliferation of misin-formation can have serious
+consequences, in-fluencing public opinion, policy decisions, and social
+dynamics. Fact-checking plays a crit-ical role in countering
+misinformation; how-ever, the manual verification process is
+time-consuming, especially when dealing with mul-tilingual content. This
+paper presents our par-ticipation in the Multilingual and Crosslin-gual
+Fact-Checked Claim Retrieval task (Se-mEval 2025), which seeks to
+identify previ-ously fact-checked claims relevant to social media posts.
+Our proposed system leverages XLM-RoBERTa, a multilingual Transformer
+model, combined with metric learning and hard negative mining
+strategies, to optimize the se-mantic comparison of posts and
+fact-checks across multiple languages. By fine-tuning a shared embedding
+space and employing a mul-tiple similarity loss function, our approach
+en-hances retrieval accuracy while maintaining ef-ficiency. Evaluation
+results demonstrate com-petitive performance across multiple languages,
+reaching 25th place and highlighting the poten-tial of multilingual NLP
+models in automating the fact-checking process and mitigating
+misin-formation spread.
+
+\textbf{1 Introduction}
+
+Nowadays, thousands of posts are published every second on social
+networks, many of which deal with facts whose veracity may be uncertain.
+This large amount of new information, often of question-able
+credibility, forces us to remain critical and not accept anything we
+find on the Internet as true until its veracity has been verified
+(Bartolomé, 2021).
+
+news and misinformation. Such fake news and misinformation, which spread
+rapidly, can have serious consequences, such as panic, confusion and
+division, affecting both personal and collective decisions and even
+social and political processes. Ensuring the accuracy of information is
+therefore essential to protect the security and well-being of society.
+
+Manually verifying the accuracy of each new publication is a slow and
+time-consuming process, especially with the constant flood of
+information on social networks. This process is very demanding and
+time-consuming for professional fact-checkers, even when the claim and
+its verification are made in the same language, and becomes even more
+com-plicated when they are made in different languages. To speed up this
+process, several recent studies have examined its needs and identified
+certain subtasks that could be automated using Natural Language
+Processing (NLP). (Pikuliak et al., 2023). These include determining
+whether or not a fact needs to be verified, grouping facts that can be
+verified with the same source of evidence, finding the origi-nal source
+or evidence that supports the fact, and verifying the fact to assess its
+veracity based on the evidence retrieved. More and more research is
+exploring the various subtasks required to auto-mate fact checking (Guo
+et al., 2022). However, despite these advances, this automation remains
+a complex task due to several difficulties: (1) the ambiguity and
+subjectivity of language, as facts are often presented with implicit
+information, rhetor-ical resources, or biased phrases that make
+verifi-cation difficult; (2) the availability and reliability of
+sources, as automated systems must be able to distinguish between
+reliable sources and mislead-ing sources, a task that even human
+fact-checkers struggle with.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+This reality underscores the importance of verify-
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+Despite these difficulties,
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+automating fact-
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+ing every new publication and checking its content with reliable sources
+to avoid the spread of fake
+
+\begin{quote}
+1
+
+rious implications for public opinion, health pol-icy, and democratic
+processes. Developing more effective fact-checking systems can mitigate
+the impact of false narratives and contribute to a more informed
+society.
+\end{quote}
+
+The Multilingual and Crosslingual Fact-Checked Claim Retrieval shared
+task (SemEval 2025) (Peng et al., 2025) focuses on the efficient
+identification of claims that have already been fact-checked in a
+multilingual and cross-lingual context. Given a social media post, the
+goal is to determine the most relevant corresponding to fact-check for
+the post. It is divided into two ``subtasks'', that is, the task could
+be done following two different setups: (1) \textbf{Setup A:
+Monolingual}. In which both posts and fact-checks are in the same
+language; and (2) \textbf{Setup B: Crosslingual}. In which posts and
+fact-checks may be in the same language or in different languages.
+
+For this task, we propose an approach based on XLM-RoBERTa, a
+multilingual Transformer-based model, to generate contextual embeddings
+for both social media posts and fact-checked claims, enabling semantic
+comparisons across languages. Our approach employs a metric learning
+pipeline where the model is trained to optimize the cosine similarity
+between embeddings of relevant claim-post pairs, facilitating effective
+cross-lingual re-trieval. To improve the model's discriminative
+abil-ity, we incorporate a hard negative mining strategy that
+dynamically selects challenging pairs that are semantically similar but
+do not correspond to the same fact-checked claim. This forces the model
+to learn more refined feature representations, im-proving its ability to
+distinguish between highly related but distinct claims. By leveraging
+this mul-tilingual embedding space and fine-tuning it with task-specific
+constraints, our approach efficiently retrieves fact-checked claims,
+addressing the chal-lenge of misinformation detection in a multilingual
+and cross-lingual setting.
+
+\begin{quote}
+This working note is organized as follows. In Section 2, the reader will
+find a summary of impor-tant details about the task setup. Section 3
+gives an overview of our system. Next, Section 4 presents the specific
+details of our systems. The results are then discussed and presented in
+Section 5. Finally, the conclusions are presented in Section 6.
+
+2
+
+thanks to their transfer learning capabilities, they can be adapted to
+various tasks, which makes them an interesting option for this task.
+They have been shown to be effective in extracting verifications and
+identifying contradictions for a given fact (Ünver,
+
+posts to relevant claims. Text encoding is then carried out using
+XLM-RoBERTa, which gener-ates embeddings for both posts and claims.
+These embeddings capture the semantic meaning of the texts in a shared
+vector space, facilitating similarity
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+2023).
+\end{quote}
+\end{minipage} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.3333} + 2\tabcolsep}}{%
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+pre-trained
+\end{quote}
+\end{minipage}}} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.3333} + 2\tabcolsep}}{%
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+multilingual
+\end{minipage}}} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+matching.
+\end{quote}
+\end{minipage} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+Furthermore,
+\end{quote}
+\end{minipage} & & & & & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+The next step involves hard pair mining, using
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+transformer-based & models, & such & as & mBERT &
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+the MultiSimilarityMiner library to identify exam-
+\end{quote}
+\end{minipage} \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+and XLM-RoBERTa, have proven to be effective in the task of crosslingual
+fact-checking (Kazemi
+
+ples that present high similarity in the embedding space and are
+therefore more difficult to distinguish,
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+et al., 2022).
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Trained on a large multilingual
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+as they are not present in the pairs.csv file. Once
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+corpora, they are capable of handling multiple languages, making them
+capable of performing the extraction of information that verifies or
+contradict a fact even when the texts are in different languages.
+
+Therefore, in this study, we tested a self-alignment pretraining
+strategy based on XLM-RoBERTa and metric learning. Our approach
+in-volves training a multilingual language model to match social media
+posts with relevant fact-checks
+
+the pairs and hard pairs are identified, the model is trained using
+MultiSimilarityLoss as the loss func-tion, which adjusts the similarity
+and dissimilarity relationships between pairs of embeddings.
+Addi-tionally, AdamW is employed as an optimizer to efficiently update
+the model parameters.
+
+Figure 2 shows the pipeline used for the eval-uation of the model. A
+previously trained model was used to identify the most relevant claims
+re-lated to social media posts. In order to speed up
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+by leveraging semantic representations.
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Using
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+the search time, a dictionary of embeddings of the
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+hard pair mining and optimization with a multi-similarity loss function,
+the model learns to iden-tify difficult to distinguish examples,
+improving the matching accuracy between posts and claims. We fine-tuned
+the model on a shared embedding space and used MultiSimilarityLoss to
+refine similarity and dissimilarity relationships.
+
+\textbf{3 System overview}
+\end{quote}
+
+Figure 1 illustrates the architecture of our system for claim
+identification in fact-checking publica-tions. Our approach is based on
+a self-alignment pretraining method similar to SapBERT (Liu et al.,
+
+\begin{quote}
+facts was created. These claims are tokenized and passed through the
+trained model to obtain their representations in the form of embeddings.
+These representations are stored in a list and concatenated with their
+corresponding fact\_id. Once this fact dictionary is available, to
+extract the top 10 most related claims to an input post, the embedding
+of the post is obtained using the trained model and the distance between
+the embedding of the post and the pre-generated embeddings of the claims
+is calculated. From the distance matrix, the indices of the closest
+(i.e., most similar) facts are selected and the first 10 results are
+returned.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+2021), which involves training a multilingual lan-
+\end{quote}
+\end{minipage} &
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{4}
+\end{minipage}} &
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\textbf{Experimental setup}
+\end{quote}
+\end{minipage}} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+guage model, such as XLM-RoBERTa (Conneau
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+et al., 2019), through metric learning to match so-cial media posts with
+relevant fact-checks. In this way, the trained model is able to identify
+seman-tic representations through a process of hard pair mining and
+optimization using a multiple similarity
+
+\begin{quote}
+For experimentation, the datasets provided by the organizers were used
+for both training and test-ing. In the training process, a set of
+153,742 facts, 24,431 posts, and 25,742 pairings were available, as
+shown in Table 1. For the testing phase, the facts
+
+loss function. set consists of 272,446 examples, and the goal is to
+
+Specifically, the pipeline of our system is or-ganized into several
+stages, as shown in Figure
+
+find the 10 most related facts for each post (with a total of 8,275
+posts in the test set).
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+1.
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+First, data loading and processing are per-
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+It is important to note that the facts set is con-
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+formed. For this, we use the three datasets pro-vided by the organizers:
+posts.csv, which con-tains texts of social media posts, including OCR of
+each post; fact\_check.csv, which gathers ver-ified facts (claims); and
+pairs.csv, which links
+
+\begin{quote}
+3
+\end{quote}
+
+\includegraphics[width=5.66944in,height=1.58889in]{vertopal_d6fb7d0d10bf48669cf310061835dcd0/media/image1.png}
+
+Figure 1: System architecture pipeline.
+
+\includegraphics[width=5.04028in,height=1.94444in]{vertopal_d6fb7d0d10bf48669cf310061835dcd0/media/image2.png}
+
+Figure 2: Evaluation approach pipeline.
+
+other current approaches would require a sequen-tial search through the
+entire set of facts for each post, which is much less efficient.
+
+For training, XLM-RoBERTa was used as the base model, together with
+MultiSimilarityLoss as the loss function and MultiSimilarityMiner for
+hard pair generation. In addition, AdamW was used as optimizer, with a
+learning rate of 2e-5 and a weight decay of 0.01. The model was trained
+for a total of 20 epochs.
+
+\begin{quote}
+Table 1: Dataset distribution
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Type}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Number}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\textbf{Train}
+
+\begin{quote}
+metric to evaluate the performance of the models. S@10 measures the
+proportion of posts for which at least one of the ten retrieved facts is
+relevant.
+
+The detailed analysis of the results, presented in Table 2, reveals
+crucial information about the performance of the top three teams and our
+team in this task, including the official ranking in several languages.
+Overall, PINGAN AI leads the rank-ing with an S@10 (avg) of 0.96,
+standing out as the most effective model. It is followed by PALI and
+TIFIN India, with average scores of 0.9472 and 0.938 respectively,
+demonstrating their high accuracy in fact retrieval. In contrast,
+UMUTeam ranks 25th with an S@10 (avg) of 0.544, reflect-ing a much lower
+performance compared to the
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Pairs
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+25.742
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+leaders.
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+Facts & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+153.742
+\end{quote}
+\end{minipage} &
+\multirow{2}{*}{\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Analyzing the performance by language, it can
+\end{quote}
+\end{minipage}} \\
+\multirow{2}{*}{Posts} &
+\multirow{2}{*}{\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+24.431
+\end{quote}
+\end{minipage}} \\
+& & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+be seen that in ENG, the top three teams show solid
+\end{quote}
+\end{minipage} \\
+\bottomrule()
+\end{longtable}
+
+\textbf{Test}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Facts Posts
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+272.446 8.275
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+results, especially PINGAN AI (0.916) and PALI (0.904), while UMUTeam
+achieves only 0.414, in-dicating significant difficulties in this
+language. In SPA, PINGAN AI and PALI perform excellently (0.974 and
+0.97, respectively), while UMUTeam
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{5}
+\end{minipage}} &
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\textbf{Results}
+\end{quote}
+\end{minipage}} & \begin{minipage}[b]{\linewidth}\raggedright
+scores only 0.42, suggesting considerable room
+\end{minipage} \\
+& & \begin{minipage}[b]{\linewidth}\raggedright
+for improvement. In THA and MSA, PINGAN
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+In this task of identifying the most relevant facts related to the
+posts, S@10 was used as the reference
+
+\begin{quote}
+4
+\end{quote}
+
+Table 2: Official ranking reported by language and final average
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Language}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{\#1 PINGAN AI}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{\#2 PALI}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{\#3 TIFIN India}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+...
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\textbf{\#25 UMUTeam}
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\textbf{English} & 0.916 & 0.904 & 0.88 & ... & 0.414 \\
+\textbf{French} & 0.972 & 0.954 & 0.954 & ... & 0.564 \\
+\textbf{German} & 0.958 & 0.936 & 0.936 & ... & 0.384 \\
+\textbf{Portuguese} & 0.926 & 0.908 & 0.902 & ... & 0.47 \\
+\textbf{Spanish} & 0.974 & 0.97 & 0.96 & ... & 0.42 \\
+\textbf{Thai} & 0.9945 & 1.000 & 0.9945 & ... & 0.7869 \\
+\textbf{Malay} & 1.000 & 1.000 & 1.000 & ... & 0.6882 \\
+\textbf{Arabic} & 0.986 & 0.982 & 0.966 & ... & 0.716 \\
+\textbf{Turkish} & 0.948 & 0.93 & 0.904 & ... & 0.538 \\
+\textbf{Polish} & 0.926 & 0.888 & 0.886 & ... & 0.464 \\
+\textbf{Avg} & 0.96 & 0.9472 & 0.938 & ... & 0.544 \\
+\multicolumn{3}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.5000} + 4\tabcolsep}}{%
+mance. However, although UMUTeam shows rela-tively better performance in
+these languages (0.786} &
+\multicolumn{3}{>{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.5000} + 4\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+distinct claims, improving cross-lingual retrieval accuracy.
+\end{quote}
+\end{minipage}} \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+and 0.688 respectively), it still lags behind the lead-ing teams. The
+lowest overall performance is ob-served in POL. While PINGAN AI and PALI
+score 0.926 and 0.888, respectively, UMUTeam scores only 0.464, which is
+its lowest score in this lan-guage assessment.
+\end{quote}
+
+Analysis of these results shows that language diversity significantly
+affects model performance, with generally higher scores observed for THA
+and MSA, in contrast to ENG and POL. This variability suggests that the
+models used may not be equally optimized for all languages. Although our
+team (UMUTeam) did not achieve a high score in the ranking, our approach
+has notable advantages. Un-like other approaches that may require
+separate models or language-specific settings, our approach uses a
+single model for all languages and achieves a hit rate above 50\% for
+most languages. It also has a relatively short search time, making it a
+more efficient and scalable solution.
+
+\begin{quote}
+The experimental results demonstrated that our system efficiently
+retrieved relevant claims across various languages, achieving a hit rate
+above 50\% for most of them. Notably, the model showed competitive
+performance in Thai and Malay, high-lighting its effectiveness in
+languages with simpler grammatical structures. However, the system's
+per-formance was lower in English and Polish, indi-cating challenges in
+processing complex linguistic nuances. These results underscore the
+impact of language diversity on model performance, suggest-ing the need
+for language-specific optimizations.
+
+Despite not achieving top ranks, our unified model approach proved to be
+efficient and scalable, offering a significant advantage over
+language-specific solutions. The system's rapid search time and ability
+to handle multilingual input with a sin-gle model demonstrate its
+potential for real-world misinformation detection applications.
+
+Future work will focus on enhancing model per-
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\textbf{6}
+\end{quote}
+\end{minipage}} &
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\textbf{Conclusion}
+\end{quote}
+\end{minipage}} & \begin{minipage}[b]{\linewidth}\raggedright
+formance through domain adaptation, exploring
+\end{minipage} \\
+& & \begin{minipage}[b]{\linewidth}\raggedright
+cross-lingual transfer learning techniques, and ad-
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+Our participation in the Multilingual and Crosslin-gual Fact-Checked
+Claim Retrieval task (SemEval 2025) addressed the challenge of
+identifying rel-evant fact-checked claims for social media posts across
+multiple languages. We proposed a solution based on XLM-RoBERTa,
+leveraging its multilin-gual capabilities to generate contextual
+embeddings that enable semantic comparisons between posts and
+fact-checks. By incorporating a metric learning pipeline with hard
+negative mining, our approach effectively distinguished between highly
+related but
+
+\begin{quote}
+5
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+work
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+is
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+also
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+part
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+of
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+the
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+research
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+project
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+LaTe4PoliticES (PID2022-138099OB-I00) funded by MCIN/AEI/10.13039/\\
+501100011033 and the European Fund for Re-gional Development (ERDF)-a
+way to make Eu-rope, and the research project ``Services based on
+language technologies for political microtarget-ing'' (22252/PDC/23)
+funded by the Autonomous Community of the Region of Murcia through the
+Regional Support Program for the Transfer and Valorization of Knowledge
+and Scientific En-trepreneurship of the Seneca Foundation, Science and
+Technology Agency of the Region of Mur-cia. Mr. Tomás Bernal-Beltrán is
+supported by the fellowship 22754/FPI/24 funded by Fundación Séneca and
+co-funded by VOCALI SISTEMAS INTELIGENTES S.L. Región de Murcia (Spain).
+
+\textbf{References}
+
+Mariano Bartolomé. 2021. Redes sociales, desinforma-ción, cibersoberanía
+y vigilancia digital: una visión desde la ciberseguridad. \emph{RESI:
+Revista de estudios en seguridad internacional}, 7(2):167--185.
+
+Alexis Conneau, Kartikay Khandelwal, Naman Goyal, Vishrav Chaudhary,
+Guillaume Wenzek, Francisco Guzmán, Edouard Grave, Myle Ott, Luke
+Zettle-moyer, and Veselin Stoyanov. 2019.
+
+Zhijiang Guo, Michael Schlichtkrull, and Andreas Vla-chos. 2022. A
+survey on automated fact-checking. \emph{Transactions of the Association
+for Computational Linguistics}, 10:178--206.
+
+Ashkan Kazemi, Zehua Li, Verónica Pérez-Rosas, Scott A Hale, and Rada
+Mihalcea. 2022. Matching tweets with applicable fact-checks across
+languages. \emph{arXiv preprint arXiv:2202.07094}.
+
+Fangyu Liu, Ehsan Shareghi, Zaiqiao Meng, Marco Basaldella, and Nigel
+Collier. 2021. Self-alignment pretraining for biomedical entity
+representations. In \emph{Proceedings of the 2021 Conference of the
+North American Chapter of the Association for Computa-tional
+Linguistics: Human Language Technologies}, pages 4228--4238.
+
+Preslav Nakov, David Corney, Maram Hasanain, Firoj Alam, Tamer Elsayed,
+Alberto Barrón-Cedeño, Paolo Papotti, Shaden Shaar, and Giovanni Da San
+Martino. 2021. Automated fact-checking for assisting human
+fact-checkers. \emph{arXiv preprint arXiv:2103.07769}.
+
+Qiwei Peng, Robert Moro, Michal Gregor, Ivan Srba, Simon Ostermann,
+Marian Simko, Juraj Podroužek, Matúš Mesarˇcík, Jaroslav Kopˇcan, and
+Anders Sø-gaard. 2025. Semeval-2025 task 7: Multilingual and
+
+6
+\end{quote}
+
+\end{document}
+```

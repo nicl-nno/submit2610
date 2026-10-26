@@ -1,0 +1,6 @@
+# NarrativeQA restricted to the examples fitting the 32,768-token Meno-Lite
+# window: over-long examples are SKIPPED (lm-eval's PRUNE_* mechanism), not
+# left-truncated. Plug the task in via the --include_path lm_eval_tasks flag,
+# running lm_eval from the repo checkout root.
+task: scrolls_narrativeqa_filtered
+class: !function scrolls_narrativeqa_filtered.NarrativeQAFiltered

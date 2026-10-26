@@ -1,0 +1,94 @@
+# Review of "Low-resource Buryat-Russian neural machine translation"
+
+## Summary
+
+This paper presents a neural machine translation (NMT) system for the low-resource Russian-Buryat language pair. Buryat is an endangered Mongolic language spoken primarily in Russia. The authors address the challenge of limited computational resources for Buryat by constructing a parallel corpus through three approaches: manual translation of Russian texts, collaboration with local Buryat organizations, and web-based data collection. They created a dataset of approximately 94,000 sentence pairs (including 33,000 unique words) from various sources including dictionaries, Bible translations, literary texts, and manually translated content.
+
+For model development, the authors compared several architectures, ultimately selecting the NLLB model over mT5 due to its superior performance. They enhanced the NLLB tokenizer with Buryat-specific vocabulary to improve token efficiency. Their best model achieves BLEU scores of 20.61 (Russian→Buryat) and 35.43 (Buryat→Russian), outperforming Google Translate and Claude 3.5 on their test set. They also developed an online translation interface to make their model publicly accessible.
+
+## Strengths and Weaknesses
+
+### Quality
+
+**Strengths:**
+- The experimental methodology is robust, with clear documentation of model selection, training procedures, and performance evaluation across multiple baselines (Google Translate and Claude).
+- The authors thoroughly document their data collection and preparation processes, providing transparency into how the parallel corpus was constructed.
+- The paper presents a comprehensive approach to a challenging NLP task, combining manual translation efforts with computational techniques.
+- The evaluation breaks down performance by text source type, providing more granular insights about model strengths and weaknesses.
+
+**Weaknesses:**
+- The test set is created from the same pool of source texts as the training data, which may introduce evaluation bias, as acknowledged by the authors.
+- While native speakers reportedly evaluated the translations as "acceptable," the paper lacks a formal human evaluation protocol with quantitative metrics to complement the automatic evaluation.
+- More details on computing resources, training time, and model size after quantization would help readers understand the practical implementation requirements.
+
+### Clarity
+
+**Strengths:**
+- The paper is well-structured and presents a clear narrative from problem statement through solution development and evaluation.
+- Technical details regarding corpus construction, data filtering, and model development are thoroughly explained.
+- Tables and figures effectively supplement the text, particularly in showing model performance comparisons.
+- The limitations section is comprehensive and candid about the challenges of the approach.
+
+**Weaknesses:**
+- Some methodological details, such as the prompt used for translating with Claude (mentioned but relegated to an appendix that wasn't included), are missing.
+- The paper would benefit from a clearer explanation of how the Buryat tokenizer was integrated with the NLLB model's existing vocabulary.
+- The process for evaluating tokenizer improvements (before and after adding Buryat tokens) could be more explicitly documented.
+
+### Significance
+
+**Strengths:**
+- The work addresses language preservation for an endangered language, which has significant cultural importance.
+- The release of the first open-source parallel corpus for Russian-Buryat and an openly accessible translation system provides valuable resources for the Buryat community and NLP researchers.
+- The methodology could serve as a template for similar efforts with other low-resource languages.
+- The system outperforms existing commercial solutions (Google Translate, Claude) for this language pair.
+
+**Weaknesses:**
+- The improvement over Google Translate is modest in some domains, and Google's system performs better on certain text types (notably Bible translations from Buryat to Russian).
+- The impact might be limited by the relatively small size of the Buryat-speaking population, though this doesn't diminish its cultural importance.
+
+### Originality
+
+**Strengths:**
+- The paper represents one of the first comprehensive efforts to build an NMT system for the Buryat-Russian language pair, with few prior works to build upon.
+- The multi-faceted approach to corpus construction, combining manual translation, institutional collaboration, and web mining, is thorough and creative.
+- The authors' approach to tokenizer vocabulary extension for a low-resource language provides a useful model for similar efforts.
+
+**Weaknesses:**
+- The technical approach largely follows established practices in low-resource NMT, without introducing novel algorithmic innovations.
+- The experimentation with Russian-Mongolian as a stepping stone for transfer learning was mentioned but not fully explored; more experiments leveraging the genetic relationship between Mongolian and Buryat could have been valuable.
+
+## Quality: 3 (Good)
+
+The paper presents methodologically sound research with carefully documented procedures and results. Despite minor limitations in the evaluation setup (potential data leakage between train and test sets), the work is technically solid with well-supported claims.
+
+## Clarity: 4 (Excellent)
+
+The paper is exceptionally well-written, with clear explanations of complex technical processes and thoughtful organization. The figures and tables effectively complement the text.
+
+## Significance: 4 (Excellent)
+
+This work makes a substantial contribution to language preservation efforts for an endangered language, providing both practical tools for the Buryat community and resources for NLP researchers focusing on low-resource languages.
+
+## Originality: 3 (Good)
+
+While the methods employed are not novel in the field of machine translation, their application to this specific language pair and the comprehensive approach to data collection and system development demonstrate significant original effort.
+
+## Questions
+
+1. Could you explain more about the human evaluation process? The paper mentions that "native speakers have evaluated the translations as acceptable" but doesn't describe the evaluation protocol, number of evaluators, or what criteria were used to determine acceptability.
+
+2. You mention experimenting with Russian-Mongolian as a potential stepping stone for transfer learning. Could you elaborate on these experiments and whether they showed improvement over direct fine-tuning on Russian-Buryat data?
+
+3. For the dictionary data extraction, you mention using Claude for pages with unrecognized fonts. What percentage of the dictionary content needed this approach, and did you observe any quality differences between the regex-extracted and LLM-extracted entries?
+
+4. Have you explored leveraging multilingual models that include both Buryat and Mongolian data simultaneously? Since these languages are related, a multi-task learning approach might improve performance on the lower-resource language (Buryat).
+
+5. The paper shows that performance varies substantially across different text types (Bible, phrasebooks, literature). Have you considered creating domain-specific models or implementing domain adaptation techniques to address these disparities?
+
+## Limitations
+
+Yes, the authors have adequately addressed the limitations of their work in a dedicated section. They candidly discuss issues related to translation accuracy, lack of dialect representation, cultural nuances, and data scarcity. They also note the potential risks of propagating errors if users rely too heavily on automated translation without verification, which shows thoughtful consideration of the broader impacts of their system.
+
+## Overall: 5 (Accept)
+
+This paper presents a technically sound approach to a challenging NLP problem, with high impact on an endangered language community. The authors have created valuable resources (parallel corpus, monolingual corpus, and translation system) that they've made publicly available, which will enable further research. The paper is well-written, the experimental methodology is thorough, and the authors are transparent about limitations. The work represents an important contribution to computational linguistics for low-resource languages and language preservation efforts.

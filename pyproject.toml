@@ -1,0 +1,106 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-training"
+version = "0.1.0"
+description = "GRPO wrapper over TRL for fine-tuning the Meno decoder LLM family (RU/EN)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Anonymous Authors" }]
+keywords = ["grpo", "trl", "llm", "fine-tuning", "meno"]
+dependencies = [
+    "transformers>=4.55",
+    "datasets>=4.5",
+    "tokenizers>=0.21",
+    "jinja2>=3.1",
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+# Runtime deps only needed by grpo_train.py / run_eval.py (GRPO loop, vLLM judge).
+train = [
+    "torch>=2.8",
+    "trl>=0.20",
+    "vllm>=0.10",
+    "ragas>=0.4.0",
+    # ragas 0.4.3 unconditionally imports
+    # langchain_community.chat_models.vertexai, removed in langchain-community
+    # 0.4 (the langchain 1.x generation), and ragas pins no upper bounds on
+    # the langchain stack — so we cap it ourselves.
+    "langchain>=0.3.27,<1.0",
+    "langchain-community>=0.3.24,<0.4",
+    "langchain-openai>=0.3.6,<1.0",
+    "openai>=1.40",
+    "sentence-transformers>=3.0",
+    # pybind11 build (0.2.2 migrated off SWIG → no SwigPyObject DeprecationWarnings
+    # at import; vllm requires sentencepiece unpinned, so this floor wins).
+    "sentencepiece>=0.2.2",
+    # Grammar-classifier fluency reward: Russian sentence segmentation (Natasha).
+    # Pure-Python, light. Used by the fluency scorer to split long answers into
+    # sentences before per-sentence grammar classification.
+    "razdel>=0.5.0",
+    # Fluency language guard (llm_training/reward/language.py): detect the
+    # answer language and down-weight fluency when it mismatches the task's
+    # target language (reward-hacking defence). Pure Python; limited to RU+EN
+    # (the two dataset languages). Imported lazily.
+    "lingua-language-detector>=2.0",
+    # Deterministic NEREL F1 reward (entity/relation extraction sub-configs):
+    # line-set F1 over nltk-tokenized + Snowball-stemmed tokens, ported verbatim
+    # from the EleutherAI NEREL-bench. wordpunct_tokenize + RussianStemmer need
+    # NO nltk data download (both rule-based).
+    "nltk>=3.8",
+    # SFT warm-up validation metric: chrF++ (sacrebleu CHRF with word_order=2)
+    # — the character-level half of the harmonic(format_check, chrF++) val score
+    # in sft_warmup.py (the same library the EleutherAI NEREL-bench uses).
+    "sacrebleu>=2.0",
+    # Difficulty-scoring progress bars (llm_training/runtime/difficulty.py).
+    # transformers already pulls tqdm transitively; declared explicitly for
+    # clarity (the same convention as scikit-learn below).
+    "tqdm>=4.66",
+    # Fused Liger kernels: eliminate the [B,T,V] logits transient in SFT
+    # (fused lm_head+CE) and GRPO (LigerFusedLinearGRPOLoss over the 145k
+    # vocab) — liger-kernel >= 0.7 is required for transformers v5 and ships
+    # the chunked_loss module both TRL 0.20 and 1.10 import.
+    "liger-kernel>=0.7",
+    # Isotonic-regression fluency calibrator fit (scripts/calibrate_fluency.py,
+    # offline one-shot). The online scorer loads the serialised thresholds and
+    # applies them via numpy interp — sklearn is NOT imported at reward time.
+    # rAGAS already pulls sklearn transitively; listed explicitly for clarity.
+    "scikit-learn>=1.4",
+    # Offline keyboard-typo augmentation of user-typed prompt spans (grpo_train.py
+    # --typo-share; ai-forever, rule-based + KartaSlov statistics). Pure Python
+    # over numpy + python-Levenshtein; the augment module imports it lazily so
+    # the rest of the package stays importable without it.
+    # python-Levenshtein
+    "augmentex>=1.3",
+    # Extraction-normalization reward component (llm_training/reward/extraction.py,
+    # GRPO-extraction line): spaCy morphology resolves homonymy by context —
+    # the reason it is preferred over dictionary analyzers. The ru/en models
+    # are an operator-side install (python -m spacy download ru_core_news_md
+    # en_core_web_md); without them the component degrades to N/A, never
+    # aborts. Imported lazily.
+    # (python -m spacy download
+    "spacy>=3.7",
+]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.24"]
+# Continued pre-training (cpt_train.py) multi-GPU parallelism on nodes where
+# DeepSpeed is not preinstalled (compute-node already carries 0.15.4). ZeRO-2 is
+# the working default; see deepspeed_zero2.json / deepspeed_zero3.json.
+# deepspeed_zero3.json.
+deepspeed = ["deepspeed>=0.15"]
+
+[tool.setuptools.packages.find]
+include = ["llm_training*"]
+exclude = ["tests*", "src_data*", "data*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-ra"
+markers = [
+    "network: tests requiring network access (e.g. HuggingFace NEREL_Instruct download)",
+    "gpu: tests requiring a CUDA GPU (e.g. the real LLM-as-Judge reward)",
+]

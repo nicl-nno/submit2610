@@ -1,0 +1,15 @@
+**Neuronet** is an informal term that blends "neural" and "network," typically referring to a **neural network**. Here's a breakdown:
+
+1. **Meaning**:  
+   - In **biology**, it could describe interconnected neurons in the nervous system.  
+   - In **technology**, it often refers to **artificial neural networks (ANNs)**, computational models used in machine learning and AI.
+
+2. **Correctness**:  
+   - While "neuronet" is understandable in casual contexts, it is **not a standard term** in formal academic or technical writing.  
+   - The accepted terms are **"neural network"** (biological or computational) or **"artificial neural network (ANN)"** for AI systems.  
+
+3. **Usage Notes**:  
+   - The term may appear in non-English contexts (e.g., direct translations like Russian "нейросеть") or as branding for specific tools/products.  
+   - In English, it’s akin to slang or jargon and is less common than abbreviations like "NN" or "ANN."
+
+**In short**: Use "neural network" for clarity in formal settings, but "neuronet" may suffice informally or in specific communities.

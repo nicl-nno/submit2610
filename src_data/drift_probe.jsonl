@@ -1,0 +1,76 @@
+{"id": "probe-0001", "lang": "ru", "check": {"type": "min_words", "n": 20}, "prompt": "Напиши связный текст о теме «городской транспорт». Ответ должен содержать не менее 20 слов."}
+{"id": "probe-0002", "lang": "en", "check": {"type": "min_words", "n": 20}, "prompt": "Write a coherent text about public transport. Your answer must contain at least 20 words."}
+{"id": "probe-0003", "lang": "ru", "check": {"type": "min_words", "n": 20}, "prompt": "Напиши связный текст о теме «настольные игры». Ответ должен содержать не менее 20 слов."}
+{"id": "probe-0004", "lang": "en", "check": {"type": "min_words", "n": 20}, "prompt": "Write a coherent text about board games. Your answer must contain at least 20 words."}
+{"id": "probe-0005", "lang": "ru", "check": {"type": "min_words", "n": 20}, "prompt": "Напиши связный текст о теме «горные походы». Ответ должен содержать не менее 20 слов."}
+{"id": "probe-0006", "lang": "en", "check": {"type": "min_words", "n": 20}, "prompt": "Write a coherent text about mountain hiking. Your answer must contain at least 20 words."}
+{"id": "probe-0007", "lang": "ru", "check": {"type": "min_words", "n": 20}, "prompt": "Напиши связный текст о теме «морская кухня». Ответ должен содержать не менее 20 слов."}
+{"id": "probe-0008", "lang": "en", "check": {"type": "min_words", "n": 20}, "prompt": "Write a coherent text about seafood cuisine. Your answer must contain at least 20 words."}
+{"id": "probe-0009", "lang": "ru", "check": {"type": "min_words", "n": 40}, "prompt": "Напиши связный текст о теме «библиотеки». Ответ должен содержать не менее 40 слов."}
+{"id": "probe-0010", "lang": "en", "check": {"type": "min_words", "n": 40}, "prompt": "Write a coherent text about libraries. Your answer must contain at least 40 words."}
+{"id": "probe-0011", "lang": "ru", "check": {"type": "min_words", "n": 40}, "prompt": "Напиши связный текст о теме «метеорология». Ответ должен содержать не менее 40 слов."}
+{"id": "probe-0012", "lang": "en", "check": {"type": "min_words", "n": 40}, "prompt": "Write a coherent text about meteorology. Your answer must contain at least 40 words."}
+{"id": "probe-0013", "lang": "ru", "check": {"type": "min_words", "n": 40}, "prompt": "Напиши связный текст о теме «фотография». Ответ должен содержать не менее 40 слов."}
+{"id": "probe-0014", "lang": "en", "check": {"type": "min_words", "n": 40}, "prompt": "Write a coherent text about photography. Your answer must contain at least 40 words."}
+{"id": "probe-0015", "lang": "ru", "check": {"type": "min_words", "n": 40}, "prompt": "Напиши связный текст о теме «садоводство». Ответ должен содержать не менее 40 слов."}
+{"id": "probe-0016", "lang": "en", "check": {"type": "min_words", "n": 40}, "prompt": "Write a coherent text about gardening. Your answer must contain at least 40 words."}
+{"id": "probe-0017", "lang": "ru", "check": {"type": "min_words", "n": 60}, "prompt": "Напиши связный текст о теме «мосты». Ответ должен содержать не менее 60 слов."}
+{"id": "probe-0018", "lang": "en", "check": {"type": "min_words", "n": 60}, "prompt": "Write a coherent text about bridges. Your answer must contain at least 60 words."}
+{"id": "probe-0019", "lang": "ru", "check": {"type": "min_words", "n": 60}, "prompt": "Напиши связный текст о теме «чайная культура». Ответ должен содержать не менее 60 слов."}
+{"id": "probe-0020", "lang": "en", "check": {"type": "min_words", "n": 60}, "prompt": "Write a coherent text about tea culture. Your answer must contain at least 60 words."}
+{"id": "probe-0021", "lang": "ru", "check": {"type": "min_words", "n": 60}, "prompt": "Напиши связный текст о теме «аквариумы». Ответ должен содержать не менее 60 слов."}
+{"id": "probe-0022", "lang": "en", "check": {"type": "min_words", "n": 60}, "prompt": "Write a coherent text about aquariums. Your answer must contain at least 60 words."}
+{"id": "probe-0023", "lang": "ru", "check": {"type": "min_words", "n": 60}, "prompt": "Напиши связный текст о теме «нарды». Ответ должен содержать не менее 60 слов."}
+{"id": "probe-0024", "lang": "en", "check": {"type": "min_words", "n": 60}, "prompt": "Write a coherent text about backgammon. Your answer must contain at least 60 words."}
+{"id": "probe-0025", "lang": "ru", "check": {"type": "max_words", "n": 25}, "prompt": "Расскажи коротко про городской транспорт. Ответ — не более 25 слов."}
+{"id": "probe-0026", "lang": "en", "check": {"type": "max_words", "n": 25}, "prompt": "Write briefly about public transport. Your answer must be at most 25 words long."}
+{"id": "probe-0027", "lang": "ru", "check": {"type": "max_words", "n": 25}, "prompt": "Расскажи коротко про настольные игры. Ответ — не более 25 слов."}
+{"id": "probe-0028", "lang": "en", "check": {"type": "max_words", "n": 25}, "prompt": "Write briefly about board games. Your answer must be at most 25 words long."}
+{"id": "probe-0029", "lang": "ru", "check": {"type": "max_words", "n": 25}, "prompt": "Расскажи коротко про горные походы. Ответ — не более 25 слов."}
+{"id": "probe-0030", "lang": "en", "check": {"type": "max_words", "n": 25}, "prompt": "Write briefly about mountain hiking. Your answer must be at most 25 words long."}
+{"id": "probe-0031", "lang": "ru", "check": {"type": "max_words", "n": 50}, "prompt": "Расскажи коротко про морская кухня. Ответ — не более 50 слов."}
+{"id": "probe-0032", "lang": "en", "check": {"type": "max_words", "n": 50}, "prompt": "Write briefly about seafood cuisine. Your answer must be at most 50 words long."}
+{"id": "probe-0033", "lang": "ru", "check": {"type": "max_words", "n": 50}, "prompt": "Расскажи коротко про библиотеки. Ответ — не более 50 слов."}
+{"id": "probe-0034", "lang": "en", "check": {"type": "max_words", "n": 50}, "prompt": "Write briefly about libraries. Your answer must be at most 50 words long."}
+{"id": "probe-0035", "lang": "ru", "check": {"type": "max_words", "n": 50}, "prompt": "Расскажи коротко про метеорология. Ответ — не более 50 слов."}
+{"id": "probe-0036", "lang": "en", "check": {"type": "max_words", "n": 50}, "prompt": "Write briefly about meteorology. Your answer must be at most 50 words long."}
+{"id": "probe-0037", "lang": "ru", "check": {"type": "exact_words", "n": 15}, "prompt": "Опиши фотография ровно 15 словами — ни одним словом больше или меньше."}
+{"id": "probe-0038", "lang": "en", "check": {"type": "exact_words", "n": 15}, "prompt": "Describe photography in exactly 15 words — not one word more or less."}
+{"id": "probe-0039", "lang": "ru", "check": {"type": "exact_words", "n": 30}, "prompt": "Опиши садоводство ровно 30 словами — ни одним словом больше или меньше."}
+{"id": "probe-0040", "lang": "en", "check": {"type": "exact_words", "n": 30}, "prompt": "Describe gardening in exactly 30 words — not one word more or less."}
+{"id": "probe-0041", "lang": "ru", "check": {"type": "no_commas"}, "prompt": "Составь рассказ про мосты. В ответе запрещено использовать запятые."}
+{"id": "probe-0042", "lang": "en", "check": {"type": "no_commas"}, "prompt": "Write a story about bridges. Your entire answer must not contain any commas."}
+{"id": "probe-0043", "lang": "ru", "check": {"type": "no_commas"}, "prompt": "Составь рассказ про чайная культура. В ответе запрещено использовать запятые."}
+{"id": "probe-0044", "lang": "en", "check": {"type": "no_commas"}, "prompt": "Write a story about tea culture. Your entire answer must not contain any commas."}
+{"id": "probe-0045", "lang": "ru", "check": {"type": "no_commas"}, "prompt": "Составь рассказ про аквариумы. В ответе запрещено использовать запятые."}
+{"id": "probe-0046", "lang": "en", "check": {"type": "no_commas"}, "prompt": "Write a story about aquariums. Your entire answer must not contain any commas."}
+{"id": "probe-0047", "lang": "ru", "check": {"type": "no_commas"}, "prompt": "Составь рассказ про нарды. В ответе запрещено использовать запятые."}
+{"id": "probe-0048", "lang": "en", "check": {"type": "no_commas"}, "prompt": "Write a story about backgammon. Your entire answer must not contain any commas."}
+{"id": "probe-0049", "lang": "ru", "check": {"type": "json_keys", "keys": ["name", "age"]}, "prompt": "Ответь одним JSON-объектом с ключами \"name\", \"age\" (значения — любые осмысленные строки), без пояснений."}
+{"id": "probe-0050", "lang": "en", "check": {"type": "json_keys", "keys": ["name", "age"]}, "prompt": "Answer with a single JSON object with the keys \"name\", \"age\" (any meaningful string values), no explanations."}
+{"id": "probe-0051", "lang": "ru", "check": {"type": "json_keys", "keys": ["title", "items"]}, "prompt": "Ответь одним JSON-объектом с ключами \"title\", \"items\" (значения — любые осмысленные строки), без пояснений."}
+{"id": "probe-0052", "lang": "en", "check": {"type": "json_keys", "keys": ["title", "items"]}, "prompt": "Answer with a single JSON object with the keys \"title\", \"items\" (any meaningful string values), no explanations."}
+{"id": "probe-0053", "lang": "ru", "check": {"type": "json_keys", "keys": ["city", "country"]}, "prompt": "Ответь одним JSON-объектом с ключами \"city\", \"country\" (значения — любые осмысленные строки), без пояснений."}
+{"id": "probe-0054", "lang": "en", "check": {"type": "json_keys", "keys": ["city", "country"]}, "prompt": "Answer with a single JSON object with the keys \"city\", \"country\" (any meaningful string values), no explanations."}
+{"id": "probe-0055", "lang": "ru", "check": {"type": "json_keys", "keys": ["question", "answer"]}, "prompt": "Ответь одним JSON-объектом с ключами \"question\", \"answer\" (значения — любые осмысленные строки), без пояснений."}
+{"id": "probe-0056", "lang": "en", "check": {"type": "json_keys", "keys": ["question", "answer"]}, "prompt": "Answer with a single JSON object with the keys \"question\", \"answer\" (any meaningful string values), no explanations."}
+{"id": "probe-0057", "lang": "ru", "check": {"type": "keyword_min", "keyword": "данные", "n": 2}, "prompt": "Напиши про городской транспорт. Слово «данные» должно встретиться в ответе не менее 2 раз."}
+{"id": "probe-0058", "lang": "en", "check": {"type": "keyword_min", "keyword": "data", "n": 2}, "prompt": "Write about public transport. The word \"data\" must appear in your answer at least 2 times."}
+{"id": "probe-0059", "lang": "ru", "check": {"type": "keyword_min", "keyword": "данные", "n": 3}, "prompt": "Напиши про настольные игры. Слово «данные» должно встретиться в ответе не менее 3 раз."}
+{"id": "probe-0060", "lang": "en", "check": {"type": "keyword_min", "keyword": "data", "n": 3}, "prompt": "Write about board games. The word \"data\" must appear in your answer at least 3 times."}
+{"id": "probe-0061", "lang": "ru", "check": {"type": "keyword_min", "keyword": "модель", "n": 2}, "prompt": "Напиши про горные походы. Слово «модель» должно встретиться в ответе не менее 2 раз."}
+{"id": "probe-0062", "lang": "en", "check": {"type": "keyword_min", "keyword": "model", "n": 2}, "prompt": "Write about mountain hiking. The word \"model\" must appear in your answer at least 2 times."}
+{"id": "probe-0063", "lang": "ru", "check": {"type": "keyword_min", "keyword": "модель", "n": 3}, "prompt": "Напиши про морская кухня. Слово «модель» должно встретиться в ответе не менее 3 раз."}
+{"id": "probe-0064", "lang": "en", "check": {"type": "keyword_min", "keyword": "model", "n": 3}, "prompt": "Write about seafood cuisine. The word \"model\" must appear in your answer at least 3 times."}
+{"id": "probe-0065", "lang": "ru", "check": {"type": "keyword_max", "keyword": "облако", "n": 0}, "prompt": "Расскажи про библиотеки. Слово «облако» встречается в вопросе, но в ответе его использовать нельзя."}
+{"id": "probe-0066", "lang": "en", "check": {"type": "keyword_max", "keyword": "cloud", "n": 0}, "prompt": "Write about libraries. The word \"cloud\" appears in this prompt but must NOT appear in your answer."}
+{"id": "probe-0067", "lang": "ru", "check": {"type": "keyword_max", "keyword": "сеть", "n": 0}, "prompt": "Расскажи про метеорология. Слово «сеть» встречается в вопросе, но в ответе его использовать нельзя."}
+{"id": "probe-0068", "lang": "en", "check": {"type": "keyword_max", "keyword": "network", "n": 0}, "prompt": "Write about meteorology. The word \"network\" appears in this prompt but must NOT appear in your answer."}
+{"id": "probe-0069", "lang": "en", "check": {"type": "language_ru"}, "prompt": "Write a short text about photography. You MUST answer in Russian."}
+{"id": "probe-0070", "lang": "ru", "check": {"type": "language_en"}, "prompt": "Напиши короткий текст про фотография. Отвечать нужно на английском языке."}
+{"id": "probe-0071", "lang": "en", "check": {"type": "language_ru"}, "prompt": "Write a short text about gardening. You MUST answer in Russian."}
+{"id": "probe-0072", "lang": "ru", "check": {"type": "language_en"}, "prompt": "Напиши короткий текст про садоводство. Отвечать нужно на английском языке."}
+{"id": "probe-0073", "lang": "en", "check": {"type": "language_ru"}, "prompt": "Write a short text about bridges. You MUST answer in Russian."}
+{"id": "probe-0074", "lang": "ru", "check": {"type": "language_en"}, "prompt": "Напиши короткий текст про мосты. Отвечать нужно на английском языке."}
+{"id": "probe-0075", "lang": "en", "check": {"type": "language_ru"}, "prompt": "Write a short text about tea culture. You MUST answer in Russian."}
+{"id": "probe-0076", "lang": "ru", "check": {"type": "language_en"}, "prompt": "Напиши короткий текст про чайная культура. Отвечать нужно на английском языке."}

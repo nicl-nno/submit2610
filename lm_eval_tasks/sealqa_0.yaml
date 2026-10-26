@@ -1,0 +1,34 @@
+# SealQA; canary
+# The SealQA-0 task (the SealQA core, 111 questions) for evolutionary
+# merging. Upstream lm-eval 0.4.13 has no such task, so it is defined here
+# and plugged in via --include_path lm_eval_tasks (and, under
+# mergekit-evolve, via --task-search-path). The prompt and metric live in
+# sealqa.py (a deterministic "relaxed exact match" proxy: the normalized
+# gold is a substring of the normalized prediction). The test split is
+# scored (the only split SealQA ships; the canary string goes into the
+# report). The dataset revision is pinned via dataset_kwargs.revision for
+# reproducibility (SealQA is dynamic).
+task: sealqa_0
+dataset_path: vtllms/sealqa
+dataset_name: seal_0
+test_split: test
+output_type: generate_until
+dataset_kwargs:
+  revision: 0c298f519c871579c75920189b3858da29fe2c81
+doc_to_text: !function sealqa.doc_to_text
+doc_to_target: !function sealqa.doc_to_target
+generation_kwargs:
+  do_sample: false
+  temperature: 0.0
+  max_gen_toks: 256
+  until:
+    - "<|im_end|>"
+    - "</s>"
+    - "<|endoftext|>"
+process_results: !function sealqa.process_results
+metric_list:
+  - metric: contains
+    aggregation: mean
+    higher_is_better: true
+metadata:
+  version: 1.0

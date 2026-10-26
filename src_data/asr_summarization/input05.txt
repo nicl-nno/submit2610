@@ -1,0 +1,36 @@
+Переведи, пожалуйста, с английского на русский следующий текст научной рецензии.
+
+Summary: The paper introduces Pisets: a three-component system for Russian speech-to_text in lectures/interviews using Wav2Vec2 for VAD, AST filtering,_Whisper for transcription, curriculum learning on diverse_ Russian corpora, and uncertainty modeling._ Experiments show improved accuracy over_ Whisper/WhisperX under certain conditions but rely on small datasets.
+
+Strengths:
+1️⃣ Novel integration of Wav2Vec2 VAD with AST filtering and Whisper
+2️⃣ Focus on underrepresented Russian language speech processing
+3️⃣ Open-source implementation enhancing reproducibility
+4️⃣ Innovative uncertainty estimation for error-flagging in transcriptions
+
+Limitations:
+1️⃣ Limited performance on homophones and phonetically similar words
+2️⃣ Poor scalability due to small evaluation dataset size
+3️⃣ Undiscussed societal risks beyond uncertainty flags (e.g., legal/medical mis-transcriptions)
+4️⃣ No analysis of demographic diversity in training/test corpora
+
+Weaknesses:
+1️⃣ Extremely small evaluation dataset (7 core audios) limits statistical validity
+2️⃣ Limited baseline comparisons: incomplete details on WhisperX configuration hinder reproducibility
+3️⃣ Vague description of curriculum learning implementation metrics and schedule
+4️⃣ Poorly-justified uncertainty metrics (binary classification instead of AUC-ROC)
+5️⃣ No analysis of speaker diversity or dialect coverage in training data
+6️⃣ Incomplete computational efficiency analysis beyond timing tables
+
+Questions:
+1️⃣ What exact WhisperX model size and parameters were compared against?
+2️⃣ How was curriculum learning's 'complexity' quantitatively measured/implemented?
+3️⃣ Why does adding AST filtering reduce BERT-F1? Is this statistically significant?
+4️⃣ What computational costs do Wav2Vec2/AST preprocessing add relative to benefits?
+5️⃣ Did training data include speakers from diverse regional dialects of Russian?
+
+Decision: Accept ✅
+(Marginally above the acceptance threshold 6/10)
+
+Ratings:
+Clarity: 3/4; Confidence: 4/5; Contribution: 2/4; Originality: 3/4; Presentation: 3/4; Quality: 2/4; Significance: 2/4; Soundness: 2/4 Ethical Concerns: True;

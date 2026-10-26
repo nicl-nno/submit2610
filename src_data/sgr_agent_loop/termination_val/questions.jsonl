@@ -1,0 +1,12 @@
+{"qid": "tv-01", "lang": "en", "expect": "finalize", "question": "What is the capital of Australia?"}
+{"qid": "tv-02", "lang": "ru", "expect": "finalize", "question": "Какая река самая длинная в мире?"}
+{"qid": "tv-03", "lang": "en", "expect": "finalize", "question": "Who wrote the novel Pride and Prejudice?"}
+{"qid": "tv-04", "lang": "ru", "expect": "finalize", "question": "Кто написал роман «Война и мир»?"}
+{"qid": "tv-05", "lang": "en", "expect": "finalize", "question": "What is the boiling point of water at sea level in degrees Celsius?"}
+{"qid": "tv-06", "lang": "ru", "expect": "finalize", "question": "В каком году Юрий Гагарин совершил первый полёт в космос?"}
+{"qid": "tv-07", "lang": "en", "expect": "finalize", "question": "What is the largest planet in the Solar System?"}
+{"qid": "tv-08", "lang": "ru", "expect": "finalize", "question": "Какой химический символ у золота?"}
+{"qid": "tv-09", "lang": "en", "expect": "finalize", "question": "Name the two longest rivers in the world."}
+{"qid": "tv-10", "lang": "ru", "expect": "finalize", "question": "Перечисли три крупнейших города России по населению."}
+{"qid": "tv-11", "lang": "en", "expect": "finalize", "question": "How many minutes are there in a full day?"}
+{"qid": "tv-12", "lang": "ru", "expect": "finalize", "question": "Сколько континентов на Земле и как их называют?"}

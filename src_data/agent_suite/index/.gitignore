@@ -1,0 +1,13 @@
+# Поисковый индекс агентного набора (~2 ГБ): snapshot.npz + snapshot.json +
+# digest.txt. В git не входит — доставляется rsync; целостность гарантируют
+# digest.txt (sha256) и контент-дайджесты внутри snapshot.json, которые
+# AgentSuiteScorer проверяет при загрузке. Каталог хранится в репозитории
+# ради рантайм-контракта --agent-suite: suite.jsonl и index/ лежат рядом.
+#
+# The agent-suite search index (~2 GB): snapshot.npz + snapshot.json +
+# digest.txt. Not in git — delivered by rsync; integrity is guaranteed by
+# digest.txt (sha256) and the content digests inside snapshot.json, verified
+# by AgentSuiteScorer at load time. The directory is kept in the repo for
+# the --agent-suite runtime contract: suite.jsonl and index/ sit side by side.
+*
+!.gitignore

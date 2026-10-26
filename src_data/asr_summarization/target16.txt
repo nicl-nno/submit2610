@@ -1,0 +1,43 @@
+**Review Evaluation**
+
+**Appropriateness (5/5)**  
+The paper addresses a SemEval task on multilingual fact-checked claim retrieval, fitting well within the event's scope. Both methodology and empirical results are presented, making it a suitable submission.
+
+**Clarity (3/5)**  
+While the core ideas are understandable, the LaTeX formatting issues (e.g., broken tables, misaligned text) disrupt readability. Some sections require effort to parse, but the overall structure and methodology are discernible.
+
+**Originality (3/5)**  
+The approach combines XLM-RoBERTa with metric learning and hard negative mining, which are established techniques. While competently applied, the methodology lacks groundbreaking innovation, aligning with conventional strategies in the field.
+
+**Soundness (3/5)**  
+The technical approach is reasonable, but the results (25th place, S@10=0.544) suggest limited effectiveness compared to top teams. The claims are supported by experiments, but the lower performance raises questions about the approach’s superiority.
+
+**Meaningful Comparison (3/5)**  
+The paper compares results with top teams and acknowledges performance gaps. However, deeper analysis of why their approach underperforms (e.g., language-specific challenges, model limitations) is lacking. References are adequate but could better contextualize prior work.
+
+**Thoroughness (3/5)**  
+The paper covers essential components (method, setup, results) but leaves open questions, such as why certain languages (e.g., Thai, Malay) performed better or how to address low scores in others. Additional ablation studies could strengthen the analysis.
+
+**Recommendation (3/5)**  
+Borderline. The work contributes a functional multilingual approach but does not stand out in performance or innovation. While it highlights scalability and efficiency, the lower results make acceptance debatable.
+
+**Reviewer Confidence (3/5)**  
+The reviewer is familiar with NLP tasks and models but notes that LaTeX formatting issues may have obscured critical details. Confidence is moderate due to potential missed nuances.
+
+**Best Paper Award (1/3)**  
+Definitely not. The results and innovation level do not merit a best paper nomination.
+
+---
+
+**Final Scores**  
+- **Appropriateness**: 5  
+- **Clarity**: 3  
+- **Originality**: 3  
+- **Soundness**: 3  
+- **Meaningful Comparison**: 3  
+- **Thoroughness**: 3  
+- **Recommendation**: 3 (Borderline)  
+- **Reviewer Confidence**: 3  
+- **Best Paper**: 1  
+
+**Summary**: The paper presents a valid but modestly effective approach to multilingual fact-checking. While technically sound, its lower performance and lack of novel contributions make it a borderline candidate for acceptance.

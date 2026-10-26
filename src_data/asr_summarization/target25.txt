@@ -1,0 +1,13 @@
+Here’s a polished translation of the title, tailored for academic contexts:
+
+**"Uncertainty and Hallucinations in Large Language Models: An Empirical Study"**
+
+### Key Notes:
+1. **"Опыт практического исследования"** → "An Empirical Study"  
+   - "Empirical" is preferred in scientific writing to emphasize observation- or experiment-based research.
+2. **"Больших языковых моделях"** → "Large Language Models"  
+   - This is the standardized term (abbreviated as **LLMs** in AI literature).
+3. **"Галлюцинации"** → "Hallucinations"  
+   - Directly retained, as this term is widely adopted in AI research to describe model-generated false or nonsensical outputs.
+
+This version balances accuracy, conciseness, and alignment with academic conventions. Let me know if you'd like to refine further!

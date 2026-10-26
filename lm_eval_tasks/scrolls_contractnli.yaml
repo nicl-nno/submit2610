@@ -1,0 +1,7 @@
+# The shadow of the built-in lm-eval task with the same name and metric: only
+# the data loading is replaced — the local tau/scrolls unpacking instead of
+# the zip chain that datasets 3.2.0 cannot resolve (see scrolls_local.py).
+# Plug it in via the --include_path lm_eval_tasks flag.
+group: scrolls
+task: scrolls_contractnli
+class: !function scrolls_local.ContractNLILocal

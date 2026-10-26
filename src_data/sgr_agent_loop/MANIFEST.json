@@ -1,0 +1,91 @@
+{
+  "converter": "convert_sgr_to_loop",
+  "inputs": {
+    "/path/to/user/sources/gitflic/llm-training/src_data/sgr_agent/train_coder.jsonl": "23ec93ca037e31d24f9cb77db8e3aac92d8c592c6b94a14e9cfe14f721634bcb",
+    "/path/to/user/sources/gitflic/llm-training/src_data/sgr_agent/val_coder.jsonl": "b7daf64c4220fe6bdf32a0f9bf6254724caf6401bb1742faaef18cae8e5c4ce0",
+    "/path/to/user/sources/gitflic/llm-training/src_data/sgr_agent/train_creative_writer.jsonl": "ebbc19c8947f77f9d1502a2de5f31b6525139ff1f946bb05cbb6123e9c88bde4",
+    "/path/to/user/sources/gitflic/llm-training/src_data/sgr_agent/val_creative_writer.jsonl": "450705b2df33ed0a772bf3e5605d7c2683b093b57f2b7969bf21e5c6302766d5",
+    "/path/to/user/sources/gitflic/llm-training/src_data/sgr_agent/train_data_analyst.jsonl": "2581917f68f67d6ddd97e23feaa46dd5b9f9034ff138297bff06863fd13bd57e",
+    "/path/to/user/sources/gitflic/llm-training/src_data/sgr_agent/val_data_analyst.jsonl": "f95e492e94116cf8afa716d88791647a49fa01e267f10a9225f5a6227a750906",
+    "/path/to/user/sources/gitflic/llm-training/src_data/sgr_agent/train_deep_research.jsonl": "a522ec6b5311c7da3d72ab1026d7a7e464f933a435f216e277eb8496dd82b1a8",
+    "/path/to/user/sources/gitflic/llm-training/src_data/sgr_agent/val_deep_research.jsonl": "77ea687e303a375d715a45ae229049655a84e40f67a33651a64c3a5c41213b56",
+    "/path/to/user/sources/gitflic/llm-training/src_data/sgr_agent/train_factual_qa.jsonl": "287a03ecdfb5bcf5f761ad1bb44a4cf1feeb778a2dffc7b173eae3f62ccad79b",
+    "/path/to/user/sources/gitflic/llm-training/src_data/sgr_agent/val_factual_qa.jsonl": "2b878b63426d13a0b45be0df92a1fc3bbf909000b007a80d91ffd08f708442c6",
+    "/path/to/user/sources/gitflic/llm-training/src_data/sgr_agent/train_instruction_following.jsonl": "aa31fb60d6344fafdad854dc3c8b2d559f364fdf1f9cfc649a2dc3f5f09e8c2d",
+    "/path/to/user/sources/gitflic/llm-training/src_data/sgr_agent/val_instruction_following.jsonl": "6dfeae374b3ee0befecd26528d9f97ac515dc580ac76c90bb46c4add6bc277a3",
+    "/path/to/user/sources/gitflic/llm-training/src_data/sgr_agent/train_rewriter.jsonl": "67fb434a15b5221cd37425de19caff2cdf78f688314165b6da24e9f220576ed8",
+    "/path/to/user/sources/gitflic/llm-training/src_data/sgr_agent/val_rewriter.jsonl": "99e8625b0545811166230486a1bb71fbf2fb274cc6877bdba751e2392b799d68"
+  },
+  "classes": {
+    "coder": {
+      "records": 18,
+      "reasoning": 0,
+      "converted": 0,
+      "normalized": 0,
+      "folded": 0,
+      "action": 0,
+      "final": 18,
+      "termination_carved": 0
+    },
+    "creative_writer": {
+      "records": 20,
+      "reasoning": 0,
+      "converted": 0,
+      "normalized": 0,
+      "folded": 0,
+      "action": 0,
+      "final": 20,
+      "termination_carved": 0
+    },
+    "data_analyst": {
+      "records": 12,
+      "reasoning": 47,
+      "converted": 47,
+      "normalized": 1,
+      "folded": 0,
+      "action": 35,
+      "final": 12,
+      "termination_carved": 1
+    },
+    "deep_research": {
+      "records": 6,
+      "reasoning": 80,
+      "converted": 77,
+      "normalized": 5,
+      "folded": 3,
+      "action": 74,
+      "final": 6,
+      "termination_carved": 1
+    },
+    "factual_qa": {
+      "records": 18,
+      "reasoning": 48,
+      "converted": 46,
+      "normalized": 2,
+      "folded": 2,
+      "action": 30,
+      "final": 18,
+      "termination_carved": 1
+    },
+    "instruction_following": {
+      "records": 18,
+      "reasoning": 0,
+      "converted": 0,
+      "normalized": 0,
+      "folded": 0,
+      "action": 0,
+      "final": 18,
+      "termination_carved": 0
+    },
+    "rewriter": {
+      "records": 18,
+      "reasoning": 0,
+      "converted": 0,
+      "normalized": 0,
+      "folded": 0,
+      "action": 0,
+      "final": 18,
+      "termination_carved": 0
+    }
+  }
+}

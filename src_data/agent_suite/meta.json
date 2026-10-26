@@ -1,0 +1,20 @@
+{
+ "counts": {
+  "extraction": 141,
+  "qa": 141,
+  "summary": 141
+ },
+ "created_at": "2026-10-18T10:38:31.881626+00:00",
+ "format_version": 1,
+ "fragment_chars": 220,
+ "index_digest": "sha256:64571afc6497c64614864123df0071b6f598ad9657b6ba2378c4d87c22232eb8",
+ "inputs": {
+  "work/agent_suite/val_extract_annotated.jsonl": "81305c1ea3a61923d93f27d1ebb4519650be7e77449bc36e436ea8bbcbb8c294",
+  "work/agent_suite/val_qa.jsonl": "457949ed86171686f1c5be8b2afef273f71b81a41ccf349bb88e349f77ca448b",
+  "work/agent_suite/val_summaries_annotated.jsonl": "93c5d6f9e5e3fa0c1a0c9171a0ca452704747914ebc581b92ed3bbc6198f5f0f"
+ },
+ "per_family": 141,
+ "seed": 42,
+ "tool": "searchdocs",
+ "total": 423
+}

@@ -1,0 +1,15 @@
+# sft_train/grpo_train
+# src_data/drift_probe.jsonl
+# --task-search-path).
+# The drift-probe task — the twelfth task of the evolutionary selection:
+# 76 synthetic machine-checkable RU/EN instruction-following prompts — the
+# same instrument as the degradation control of the sft_train/grpo_train
+# checkpoint selection. The class drift_probe.DriftProbeTask reads
+# src_data/drift_probe.jsonl by its path relative to __file__ (the data is
+# not copied and is frozen for the run series); the checks are
+# self-contained, with no llm_training imports (the Ray actors only see
+# --task-search-path). The probe_acc metric is the share of satisfied
+# instructions. Plug it in via --include_path lm_eval_tasks (and, under
+# mergekit-evolve, via --task-search-path).
+task: drift_probe
+class: !function drift_probe.DriftProbeTask

@@ -1,0 +1,385 @@
+{
+ "answer_cosine": {
+  "max": 1.0,
+  "mean": 0.8085,
+  "min": 0.3027
+ },
+ "bulk_acceptance": {
+  "accepted": 54,
+  "n": 60,
+  "rate": 0.9
+ },
+ "by_family_mean_cosine": {
+  "extraction": 0.9162,
+  "qa": 0.911,
+  "summary": 0.5984
+ },
+ "n_overlap": 60,
+ "per_task": {
+  "suite-ext-ext-val-000002": {
+   "answer_cosine": 0.743,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-ext-ext-val-000025": {
+   "answer_cosine": 0.8766,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-ext-ext-val-000054": {
+   "answer_cosine": 0.9549,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-ext-ext-val-000059": {
+   "answer_cosine": 0.9499,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-ext-ext-val-000070": {
+   "answer_cosine": 0.978,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-ext-ext-val-000072": {
+   "answer_cosine": 0.961,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-ext-ext-val-000112": {
+   "answer_cosine": 0.9517,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-ext-ext-val-000128": {
+   "answer_cosine": 0.9797,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-ext-ext-val-000136": {
+   "answer_cosine": 0.9102,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-ext-ext-val-000217": {
+   "answer_cosine": 0.9194,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-ext-ext-val-000244": {
+   "answer_cosine": 0.9654,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-ext-ext-val-000246": {
+   "answer_cosine": 0.9401,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-ext-ext-val-000255": {
+   "answer_cosine": 0.9531,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-ext-ext-val-000298": {
+   "answer_cosine": 0.9159,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-ext-ext-val-000318": {
+   "answer_cosine": 0.7733,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-ext-ext-val-000330": {
+   "answer_cosine": 0.8337,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-ext-ext-val-000332": {
+   "answer_cosine": 0.8967,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-ext-ext-val-000341": {
+   "answer_cosine": 0.9324,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-ext-ext-val-000350": {
+   "answer_cosine": 0.9439,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-ext-ext-val-000359": {
+   "answer_cosine": 0.9452,
+   "bulk_accepted": true,
+   "family": "extraction",
+   "seed_accepted": true
+  },
+  "suite-qa-qa-000012": {
+   "answer_cosine": 0.8639,
+   "bulk_accepted": true,
+   "family": "qa",
+   "seed_accepted": true
+  },
+  "suite-qa-qa-000049": {
+   "answer_cosine": 0.9378,
+   "bulk_accepted": true,
+   "family": "qa",
+   "seed_accepted": true
+  },
+  "suite-qa-qa-000054": {
+   "answer_cosine": 0.9414,
+   "bulk_accepted": true,
+   "family": "qa",
+   "seed_accepted": true
+  },
+  "suite-qa-qa-000079": {
+   "answer_cosine": 0.8584,
+   "bulk_accepted": true,
+   "family": "qa",
+   "seed_accepted": true
+  },
+  "suite-qa-qa-000089": {
+   "answer_cosine": 0.9612,
+   "bulk_accepted": true,
+   "family": "qa",
+   "seed_accepted": true
+  },
+  "suite-qa-qa-000100": {
+   "answer_cosine": 0.8857,
+   "bulk_accepted": true,
+   "family": "qa",
+   "seed_accepted": true
+  },
+  "suite-qa-qa-000118": {
+   "answer_cosine": 0.9551,
+   "bulk_accepted": true,
+   "family": "qa",
+   "seed_accepted": true
+  },
+  "suite-qa-qa-000139": {
+   "answer_cosine": 0.8264,
+   "bulk_accepted": true,
+   "family": "qa",
+   "seed_accepted": true
+  },
+  "suite-qa-qa-000152": {
+   "answer_cosine": 0.9306,
+   "bulk_accepted": true,
+   "family": "qa",
+   "seed_accepted": true
+  },
+  "suite-qa-qa-000222": {
+   "answer_cosine": 0.9598,
+   "bulk_accepted": true,
+   "family": "qa",
+   "seed_accepted": true
+  },
+  "suite-qa-qa-000224": {
+   "answer_cosine": 0.9456,
+   "bulk_accepted": true,
+   "family": "qa",
+   "seed_accepted": true
+  },
+  "suite-qa-qa-000233": {
+   "answer_cosine": 0.9449,
+   "bulk_accepted": true,
+   "family": "qa",
+   "seed_accepted": true
+  },
+  "suite-qa-qa-000235": {
+   "answer_cosine": 0.8262,
+   "bulk_accepted": true,
+   "family": "qa",
+   "seed_accepted": true
+  },
+  "suite-qa-qa-000245": {
+   "answer_cosine": 0.9155,
+   "bulk_accepted": true,
+   "family": "qa",
+   "seed_accepted": true
+  },
+  "suite-qa-qa-000260": {
+   "answer_cosine": 0.9292,
+   "bulk_accepted": true,
+   "family": "qa",
+   "seed_accepted": true
+  },
+  "suite-qa-qa-000262": {
+   "answer_cosine": 0.9255,
+   "bulk_accepted": true,
+   "family": "qa",
+   "seed_accepted": true
+  },
+  "suite-qa-qa-000318": {
+   "answer_cosine": 1.0,
+   "bulk_accepted": false,
+   "family": "qa",
+   "seed_accepted": false
+  },
+  "suite-qa-qa-000332": {
+   "answer_cosine": 0.9263,
+   "bulk_accepted": true,
+   "family": "qa",
+   "seed_accepted": true
+  },
+  "suite-qa-qa-000340": {
+   "answer_cosine": 0.9544,
+   "bulk_accepted": true,
+   "family": "qa",
+   "seed_accepted": true
+  },
+  "suite-qa-qa-000359": {
+   "answer_cosine": 0.7324,
+   "bulk_accepted": true,
+   "family": "qa",
+   "seed_accepted": true
+  },
+  "suite-sum-ext-sum-e-000013": {
+   "answer_cosine": 0.3027,
+   "bulk_accepted": false,
+   "family": "summary",
+   "seed_accepted": true
+  },
+  "suite-sum-ext-sum-e-000025": {
+   "answer_cosine": 0.8628,
+   "bulk_accepted": true,
+   "family": "summary",
+   "seed_accepted": true
+  },
+  "suite-sum-ext-sum-e-000029": {
+   "answer_cosine": 0.9345,
+   "bulk_accepted": true,
+   "family": "summary",
+   "seed_accepted": true
+  },
+  "suite-sum-ext-sum-e-000031": {
+   "answer_cosine": 0.4161,
+   "bulk_accepted": true,
+   "family": "summary",
+   "seed_accepted": true
+  },
+  "suite-sum-ext-sum-e-000036": {
+   "answer_cosine": 0.3842,
+   "bulk_accepted": false,
+   "family": "summary",
+   "seed_accepted": true
+  },
+  "suite-sum-ext-sum-e-000037": {
+   "answer_cosine": 0.3865,
+   "bulk_accepted": true,
+   "family": "summary",
+   "seed_accepted": false
+  },
+  "suite-sum-ext-sum-e-000044": {
+   "answer_cosine": 0.3063,
+   "bulk_accepted": false,
+   "family": "summary",
+   "seed_accepted": true
+  },
+  "suite-sum-ext-sum-e-000049": {
+   "answer_cosine": 0.9254,
+   "bulk_accepted": true,
+   "family": "summary",
+   "seed_accepted": true
+  },
+  "suite-sum-ext-sum-e-000053": {
+   "answer_cosine": 0.6635,
+   "bulk_accepted": true,
+   "family": "summary",
+   "seed_accepted": false
+  },
+  "suite-sum-ext-sum-e-000075": {
+   "answer_cosine": 0.508,
+   "bulk_accepted": true,
+   "family": "summary",
+   "seed_accepted": true
+  },
+  "suite-sum-ext-sum-e-000076": {
+   "answer_cosine": 0.7038,
+   "bulk_accepted": false,
+   "family": "summary",
+   "seed_accepted": true
+  },
+  "suite-sum-ext-sum-e-000093": {
+   "answer_cosine": 0.9228,
+   "bulk_accepted": true,
+   "family": "summary",
+   "seed_accepted": true
+  },
+  "suite-sum-ext-sum-e-000105": {
+   "answer_cosine": 0.3718,
+   "bulk_accepted": true,
+   "family": "summary",
+   "seed_accepted": false
+  },
+  "suite-sum-ext-sum-e-000108": {
+   "answer_cosine": 0.3297,
+   "bulk_accepted": true,
+   "family": "summary",
+   "seed_accepted": false
+  },
+  "suite-sum-ext-sum-e-000118": {
+   "answer_cosine": 0.3359,
+   "bulk_accepted": true,
+   "family": "summary",
+   "seed_accepted": false
+  },
+  "suite-sum-ext-sum-e-000120": {
+   "answer_cosine": 0.3179,
+   "bulk_accepted": true,
+   "family": "summary",
+   "seed_accepted": false
+  },
+  "suite-sum-ext-sum-e-000121": {
+   "answer_cosine": 0.7652,
+   "bulk_accepted": true,
+   "family": "summary",
+   "seed_accepted": true
+  },
+  "suite-sum-ext-sum-e-000131": {
+   "answer_cosine": 0.636,
+   "bulk_accepted": true,
+   "family": "summary",
+   "seed_accepted": true
+  },
+  "suite-sum-ext-sum-e-000134": {
+   "answer_cosine": 0.8949,
+   "bulk_accepted": true,
+   "family": "summary",
+   "seed_accepted": true
+  },
+  "suite-sum-ext-sum-e-000136": {
+   "answer_cosine": 1.0,
+   "bulk_accepted": false,
+   "family": "summary",
+   "seed_accepted": false
+  }
+ },
+ "seed_acceptance": {
+  "accepted": 52,
+  "n": 60,
+  "rate": 0.8667
+ }
+}

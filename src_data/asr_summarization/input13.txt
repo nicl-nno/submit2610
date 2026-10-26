@@ -1,0 +1,5 @@
+Please rewrite this paragraph so that you can change the "master's graduation research project" to "course work", as well as rewrite the recommendations (the student has another year to study for a master's degree, so it's too early to recommend graduate school).
+
+```text
+Overall, I believe the thesis meets the requirements for a master’s graduation research project. The results are meaningful both scientifically and practically. I recommend the highest grade for this work and believe the student is worthy of the master’s degree in Applied Mathematics and Informatics, “Big Data Analytics and Artificial Intelligence” profile. The topic has significant potential for future research and possible industrial application, and I recommend continuation in the form of expanded research projects or doctoral study. A summary of the experimental findings and architectural approach could be suitable for publication at a specialized NLP or deep learning conference.
+```

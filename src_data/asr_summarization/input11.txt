@@ -1,0 +1,434 @@
+Read the scientific paper thoroughly and review it according to the guidelines.
+
+The guidelines:
+
+```text
+Summary: Briefly summarize the paper and its contributions. This is not the place to critique the paper; the authors should generally agree with a well-written summary. This is also not the place to paste the abstract—please provide the summary in your own understanding after reading.
+Strengths and Weaknesses: Please provide a thorough assessment of the strengths and weaknesses of the paper. A good mental framing for strengths and weaknesses is to think of reasons you might accept or reject the paper. Please touch on the following dimensions:
+Quality: Is the submission technically sound? Are claims well supported (e.g., by theoretical analysis or experimental results)? Are the methods used appropriate? Is this a complete piece of work or work in progress? Are the authors careful and honest about evaluating both the strengths and weaknesses of their work?
+Clarity: Is the submission clearly written? Is it well organized? (If not, please make constructive suggestions for improving its clarity.) Does it adequately inform the reader? (Note that a superbly written paper provides enough information for an expert reader to reproduce its results.)
+Significance: Are the results impactful for the community? Are others (researchers or practitioners) likely to use the ideas or build on them? Does the submission address a difficult task in a better way than previous work? Does it advance our understanding/knowledge on the topic in a demonstrable way? Does it provide unique data, unique conclusions about existing data, or a unique theoretical or experimental approach?
+Originality: Does the work provide new insights, deepen understanding, or highlight important properties of existing methods? Is it clear how this work differs from previous contributions, with relevant citations provided? Does the work introduce novel tasks or methods that advance the field? Does this work offer a novel combination of existing techniques, and is the reasoning behind this combination well-articulated? As the questions above indicates, originality does not necessarily require introducing an entirely new method. Rather, a work that provides novel insights by evaluating existing methods, or demonstrates improved efficiency, fairness, etc. is also equally valuable.
+
+You can incorporate Markdown and LaTeX into your review.
+Quality: Based on what you discussed in “Strengths and Weaknesses”, please assign the paper a numerical rating on the following scale to indicate the quality of the work.
+4 excellent
+3 good
+2 fair
+1 poor
+Clarity: Based on what you discussed in “Strengths and Weaknesses”, please assign the paper a numerical rating on the following scale to indicate the clarity of the paper.
+4 excellent
+3 good
+2 fair
+1 poor
+Significance: Based on what you discussed in “Strengths and Weaknesses”, please assign the paper a numerical rating on the following scale to indicate the significance of the paper.
+4 excellent
+3 good
+2 fair
+1 poor
+Originality: Based on what you discussed in “Strengths and Weaknesses”, please assign the paper a numerical rating on the following scale to indicate the originality of the paper.
+4 excellent
+3 good
+2 fair
+1 poor
+Questions: Please list up and carefully describe questions and suggestions for the authors, which should focus on key points (ideally around 3–5) that are actionable with clear guidance. Think of the things where a response from the author can change your opinion, clarify a confusion or address a limitation. You are strongly encouraged to state the clear criteria under which your evaluation score could increase or decrease. This can be very important for a productive rebuttal and discussion phase with the authors.
+Limitations: Have the authors adequately addressed the limitations and potential negative societal impact of their work? If so, simply leave “yes”; if not, please include constructive suggestions for improvement. In general, authors should be rewarded rather than punished for being up front about the limitations of their work and any potential negative societal impact. You are encouraged to think through whether any critical points are missing and provide these as feedback for the authors.
+Overall: Please provide an "overall score" for this submission. Choices:
+6: Strong Accept: Technically flawless paper with groundbreaking impact on one or more areas of AI, with exceptionally strong evaluation, reproducibility, and resources, and no unaddressed ethical considerations.
+5: Accept: Technically solid paper, with high impact on at least one sub-area of AI or moderate-to-high impact on more than one area of AI, with good-to-excellent evaluation, resources, reproducibility, and no unaddressed ethical considerations.
+4: Borderline accept: Technically solid paper where reasons to accept outweigh reasons to reject, e.g., limited evaluation. Please use sparingly.
+3: Borderline reject: Technically solid paper where reasons to reject, e.g., limited evaluation, outweigh reasons to accept, e.g., good evaluation. Please use sparingly.
+2: Reject: For instance, a paper with technical flaws, weak evaluation, inadequate reproducibility and incompletely addressed ethical considerations.
+1: Strong Reject: For instance, a paper with well-known results or unaddressed ethical considerations
+```
+
+The scientific paper text (in LaTeX format): 
+
+```
+% This must be in the first 5 lines to tell arXiv to use pdfLaTeX, which is strongly recommended.
+\pdfoutput=1
+% In particular, the hyperref package requires pdfLaTeX in order to break URLs across lines.
+
+\documentclass[11pt]{article}
+
+% Change "review" to "final" to generate the final (sometimes called camera-ready) version.
+% Change to "preprint" to generate a non-anonymous version with page numbers.
+% \usepackage[preprint]{acl} 
+% For the final version, omit the review option: \usepackage{acl}
+\usepackage[review]{acl}
+
+% Standard package includes
+\usepackage{times}
+\usepackage{latexsym}
+
+% For proper rendering and hyphenation of words containing Latin characters (including in bib files) 
+\usepackage[T1]{fontenc}
+% For Vietnamese characters
+% \usepackage[T5]{fontenc}
+% See https://www.latex-project.org/help/documentation/encguide.pdf for other character sets
+
+% This assumes your files are encoded as UTF8
+\usepackage[utf8]{inputenc}
+
+% This is not strictly necessary, and may be commented out,
+% but it will improve the layout of the manuscript,
+% and will typically save some space.
+\usepackage{microtype}
+
+% This is also not strictly necessary, and may be commented out.
+% However, it will improve the aesthetics of text in
+% the typewriter font.
+\usepackage{inconsolata}
+
+%Including images in your LaTeX document requires adding
+%additional package(s)
+\usepackage{graphicx}
+
+% If the title and author information does not fit in the area allocated, uncomment the following
+%
+%\setlength\titlebox{<dim>}
+%
+% and set <dim> to something 5cm or larger.
+
+\title{Low-resource Buryat-Russian neural machine translation}
+
+
+
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{TO-DO:} #1}}
+
+
+
+\author{
+\textbf{Dari Baturova\textsuperscript{1}}, 
+\textbf{Sarana Abidueva\textsuperscript{2}}, 
+\textbf{Anonymous Author\textsuperscript{1}}, 
+\textbf{Dmitrii Lichko\textsuperscript{3}} \\
+\\
+\textsuperscript{1}Anonymous University, Russia \\
+\textsuperscript{2}Saint Petersburg State University, Russia \\
+\textsuperscript{3}NUST MISiS, Russia \\
+\\
+\texttt{baturova.dari@gmail.com}, \texttt{abidueva.sarana02@gmail.com}, \texttt{anonymous@example.com}, \texttt{lichko2002@mail.ru}
+}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+
+This paper presents a study on the development of a neural machine translation (NMT) system for the Russian-Buryat language pair, focusing on addressing the challenges of low-resource translation.
+We also present a parallel corpus, constructed by processing existing texts and organizing the translation process, supplemented by data augmentation techniques to enhance model training. 
+
+We managed to achieve BLEU score of 20 and 35 for translation to Buryat and
+Russian respectively. Native speakers have evaluated the translations as acceptable.
+
+Future directions include expanding and cleaning the dataset, improving model training techniques, and exploring dialectal variations within the Buryat language.
+
+\end{abstract}
+
+
+
+\section{Introduction}
+
+The Buryat language is the national language of the Buryat people and is spoken in Russia, Mongolia, and China. It belongs to the Mongolic language group. However, due to its geographic distribution, the Buryat language has evolved differently in each country, influenced by the dominant languages and cultural contexts of the respective regions. In this article, we focus specifically on the variety of Buryat spoken in Russia, which is identified by the ISO code bxr.
+
+Although Buryat is an official language of the Republic of Buryatia in the Russian Federation, the overwhelming majority of intellectual activity there is carried out in Russian and the number of young people speaking Buryat is rapidly declining. UNESCO included the Buryat language in the "Atlas of the world's languages in danger" \citep{UNESCO:2010}. 
+
+As part and consequence of this problem, Buryat is underrepresented in computational linguistics, has limited available corpora and linguistic resources. That creates the main challenge of conducting a machine translation system for Buryat.  
+
+The Buryat language has undergone several transitions in its writing system throughout its history. Since 1939, it has been written using the Cyrillic alphabet. Before then, from 1930 to 1939, it utilized a Latin-based alphabet. Going further back, since the 18th century, the traditional Mongolian script served as the writing system for Buryat.
+This adds another complexity to the construction of machine translation, as some of the available literature was in Latin.
+
+Furthermore, the preservation and revitalization of endangered languages through modern technologies have become critical goals in both linguistic research and cultural heritage preservation. In this context, creating robust machine translation systems not only aids communication but also contributes to the documentation and promotion of underrepresented languages.
+
+
+
+\section{Related Work}
+
+Low-resource machine translation has been an active area of research in recent years, driven by the need to support underrepresented languages.
+
+Several large-scale initiatives have extended machine translation capabilities to hundreds of languages, including low-resource ones. Notable examples include the work of \citet{Bapna2022BuildingMT}, the No Language Left Behind (NLLB) project \citep{nllb2022}, and the efforts described in \citet{10.5555/3546258.3546365}. These projects demonstrate the potential of multilingual models to address challenges in low-resource settings.
+
+Other studies focus on developing machine translation systems for individual low-resource languages by fine-tuning multilingual models. Examples include work on Erzya \citep{dale-2022-first}, Ngambay \citep{sakayo-etal-2023-ngambay}, Zarma \citep{keita-etal-2024-feriji}, Karachay-Balkar \citep{10805003}, and Aromanian \citep{jerpelea-etal-2025-dialectal}. These efforts often rely on community-driven datasets and highlight the importance of adapting models to specific linguistic and cultural contexts.
+
+In June 2024, Google Translate\footnote{\url{https://translate.google.com}} added support for the Buryat language. According to company representatives, this was made possible by leveraging their language model PaLM 2. However, the dataset used for training has not been released as open source.
+
+Research on Buryat in the context of natural language processing includes work by \citet{konovalov2018learning}, who explored word vector representations for Buryat using models such as pointwise mutual information \citep{10.5555/89086.89095}, GloVe \citep{pennington-etal-2014-glove}, and Word2Vec \citep{article}, trained on data from the Buryat Wikipedia\footnote{\url{https://bxr.wikipedia.org/wiki/}}. More recently, \citet{shliazhko-etal-2024-mgpt} introduced a multilingual variant of the GPT-3 large language model, trained on 61 languages, including Buryat, using corpora such as Wikipedia and the C4 dataset \citep{10.5555/3455716.3455856}.
+
+
+
+
+\section{Parallel Corpus Construction}
+Our parallel corpus was constructed through three main approaches: manual translation of Russian texts by hired translators, collaboration with local organizations in the Republic of Buryatia that have bilingual textual resources and web-based data collection.
+
+The dataset is available as an open source\footnote{\url{https://huggingface.co/datasets/buryat-translation/buryat_russian_parallel_corpus}}.
+
+\subsection{Manual translation of texts}
+In order to create a quality Russian–Buryat parallel corpus from zero, we crafted a semi-automated system for the selection and preparation of the Russian source texts. The Taiga Corpus news segment\footnote{\url{https://tatianashavrina.github.io/taiga_site/}} contains articles from various online media like Lenta.ru, Interfax, Komsomolskaya Pravda, N+1, Fontanka.ru and Arzamas. For our project, we utilized the text corpus that was news genre to ensure maximal variety, along with clearness of meaning, and a stable correspondence between the source and the target sentences.  
+
+To improve the ease of translation, we programmed fragments consisting of several sentences (up to five) into coherent passages instead of treating every sentence as isolated. Long paragraphs were split into smaller chunks, while ensuring they were semantically cohesive. 
+
+Text that did not suit requirements was discarded and the remaining content was processed using text embedding model \texttt{aiforever/sbert\_large\_mt\_nlu\_ru}\footnote{\url{https://huggingface.co/ai-forever/sbert_large_mt_nlu_ru}} for the vectorized representations of the sentences. We then K-means clustered the data for initial selections to be more diverse and representative based on semantic similarity. The final Russian dataset contained 95,300 text fragments. 
+
+The fragments were sent to three professional translators who translated the text into Buryat. Currently, the corpus consists of 11,392 Russian–Buryat sentences that have been translated manually, with work still progress. 
+
+
+
+\subsection{Collaborations with local organizations}
+In order to extend the corpus, we cooperated with some regional institutions that deal with Buryat language materials. These were: 
+
+\begin{enumerate}
+\item  The State Translation Service of the Republic of Buryatia, which contributed bilingual presidential decrees, government resolutions, and other legal acts of subordinate level decisions. They were at first in DOCX format and were converted by the means of some automation into a format of a parallel table – a step-by-step process. 
+
+\item  The Buryat Research Center of the Siberian Branch of the Russian Academy of Sciences (BRC SB RAS) which enabled access to five parallel literary texts, but these texts had frequent mismatches at the level of sentence alignment due to translation losses or free rendering of the text. Reasonable estimates claim that only the texts which were structurally most homogeneous were chosen to be included in the corpus, other texts were set aside for possible later processing. 
+\end{enumerate}
+
+\subsection{Web-based Data Collection}
+\label{subsec: web_based_parallel}
+A significant portion of the Buryat-Russian parallel data was collected from the web. 
+
+Several dictionaries are available for the Buryat language. For our purposes, we selected the Buryat-Russian dictionary by Shagdarov and Cheremisov \citep{Shagdarov-Cheremisov} due to its extensive scope and detailed coverage, which surpasses that of other dictionaries. This dictionary contains 30,000 words, provides grammatical information and usage examples, characteristic of Buryat culture. We encountered several challenges during the data extraction process. First, the dictionary was available only as a PDF scan, which resulted in suboptimal optical character recognition (OCR) quality. We experimented with both ABBYY FineReader OCR and Tesseract OCR, but neither significantly improved the accuracy of the text extraction. Second, the extensive and complex nature of the information made it difficult to extract parallel data. The dictionary entries included multiple meanings separated by commas, semicolons, Arabic or Roman numerals, letters, and additional details enclosed in brackets. Buryat words were presented in bold, grammatical information in italics, and Russian translations in regular font. Example of the dictionary article presented in Figure~\ref{fig:dictionary-example}. To parse this structured information, we relied on regular expressions. Third, some pages suffered from unrecognized fonts, which required alternative approaches. For these cases, we employed the large language model Claude Sonnet 3.5\footnote{\url{https://www.anthropic.com/claude}}. However, using a multimodal large language model to process the entire book was not feasible due to the high associated costs.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/dictionary_example.png}
+    \caption{Example of the dictionary article}
+    \label{fig:dictionary-example}
+\end{figure}
+
+Religious literature is another common source of parallel data. For Buryat, the only available resource was the Bible\footnote{\url{https://ibt.org.ru/buryatskiy/vsya-bibliya/elektronnaya-kniga}}. We aligned the text using regular expressions based on the enumerated verses. However, the translations were not always precise. Certain content in the Buryat Bible was omitted, and in some instances, multiple verses were combined into a single sentence. These issues were also addressed using regular expressions to ensure proper alignment and extraction.
+
+We identified several bilingual books, which were translations between Buryat and Russian. A key challenge was aligning sentence pairs from these texts, as differences in structure and translation styles introduced inconsistencies. To address this, we fine-tuned the LaBSE encoder \citep{feng-etal-2022-language} on a previously collected dataset using the methodology described in \citep{dale-2022-first}, allowing us to effectively extract parallel sentences.
+
+We also explored the use of Wikipedia as a potential source of parallel data. However, the corresponding articles in Buryat and Russian were found to be significantly different. This discrepancy likely stems from the fact that much of the Buryat Wikipedia content was translated from Russian prior to 2015, while the Russian articles have undergone substantial changes since then. As a result, we were unable to extract high-quality sentence pairs from Wikipedia and it was excluded from the final dataset.
+
+A buryat monolingual corpus\footnote{\url{https://huggingface.co/datasets/buryat-translation/buryat_monocorpus}} was created by collecting texts from books sourced from websites\footnote{\url{https://old.buryatika.ru/}} \footnote{\url{https://soyol.ru/culture/books/}} \footnote{\url{https://nomoihan.com/books/}} and Internet news articles in Buryat\footnote{\url{https://burunen.ru/bur/}}. The monocorpus is used to enhance tokenizer of translation models. To further expand the parallel corpus, a subset of the news articles was translated into Russian using the large language model Claude 3.5 Sonnet (20240620). At the time of creation, this model provided best translation quality, enabling us to significantly enrich the dataset and improve the overall performance of the translation system. 
+% The prompt used for translating is provided in Appendix ~\ref{}
+
+Finally, to improve the quality of the dataset, we filtered out poorly aligned sentences using a heuristic based on sentence length and cleaned up Russian borrowings by applying a heuristic based on Levenshtein distance, both methods following the approach outlined in \citet{dale-2022-first}. After this cleaning process, we obtained a final dataset of 33 thousand words and 94 thousand sentences. The detailed breakdown of amounts by source is provided in Table~\ref{tab:sources}.
+
+\begin{table}
+\small
+  \centering
+  \begin{tabular}{lc}
+    \hline
+    \textbf{Source} & \textbf{Amount} \\
+    \hline
+    \verb|Dictionary phrases| & {45,169} \\
+    \verb|Dictionary words| & {33,449}  \\
+    \verb|Book alignments by BRC SB RAS| & {12,893} \\
+    \verb|News translated with Claude | & {11,380} \\
+    \verb|The Bible|  & {8,591}  \\
+     \verb|Organized manual translations| & {11,392}\\
+    \verb|Book alignments by model| & {4,415} \\
+    \verb|Tatoeba|     & {808}           \\\hline
+  \end{tabular}
+  \caption{Data sources, total of 94 thousand sentences and 33 thousand words}
+  \label{tab:sources}
+\end{table}
+
+\section{General concept of neural network}
+\subsection{Creation of a Russian-Mongolian Parallel Corpus}
+\label{subsec:ru_mn_corpus_creation}
+High-quality neural machine translation requires large amounts of parallel data for training. However, the Buryat language is severely underrepresented in digital resources and is considered a low resource language. In such cases, transfer learning techniques or model adaptation based on related languages are often employed to improve translation performance.
+
+The closest high-resource cognate language to Buryat is Modern Mongolian. It is more widely represented in digital space and is commonly included in multilingual models. Pretraining on Mongolian can thus serve as a valuable step for enhancing Russian–Buryat translation.
+
+In order to test this theory, we tried to find Russian Mongolian parallel corpora that was publicly accessible. The only relevant dataset was found in the OPUS collection, which is one of the largest repositories of multilingual corpora.  The corpus contains 387,310 sentence pairs. However, many of these translations were found to be of insufficient quality or poorly aligned, making the dataset unsuitable for direct use.
+
+This led us to the conclusion that generating Russian-Mongolian parallel data by translating Russian texts into Mongolian using pretrained multilingual models was a better option. To determine the most accurate model for this task, we evaluated several candidates that support both Russian and Mongolian:
+
+\begin{enumerate}
+\item \texttt{facebook/nllb-200-distilled-600M} \citep{nllb2022}
+\item \texttt{facebook/nllb-200-1.3B} \citep{nllb2022}
+\item \texttt{google/madlad400-3b-mt} \citep{10.5555/3666122.3669062}
+\end{enumerate}
+
+The steps outlined below were taken to determine the best model to use for creating a Russian-Mongolian parallel corpus:
+\begin{enumerate}
+\item Each candidate machine translation model was used to translate a shared set of Russian sentences into Mongolian.
+\item The generated translations were compared to the corresponding Mongolian references in the OPUS corpus using the ChrF++ metric.
+\item The model with the highest average ChrF++ score was selected as the most accurate for Russian–Mongolian translation (see Table~\ref{tab:chrf-results}). The same Russian source corpus used for the Russian–Buryat data — the Taiga corpus — served as the basis for the synthetic Russian–Mongolian dataset. In this case, text clustering was not applied, as a large volume of data was preferred for pretraining purposes. 
+\end{enumerate}
+
+\begin{table*}
+  \centering
+  \begin{tabular}{lc}
+    \hline
+    \textbf{Model} & \textbf{Average ChrF++ Score} \\
+    \hline
+    \verb|facebook/nllb-200-distilled-600M| & 26.4 \\
+    \verb|facebook/nllb-200-1.3B|           & \textbf{27.8} \\
+    \verb|google/madlad400-3b-mt|           & 10.8 \\\hline
+  \end{tabular}
+  \caption{Comparison of machine translation models using the ChrF++ metric}
+  \label{tab:chrf-results}
+\end{table*}
+
+The model \texttt{facebook/nllb-200-1.3B} was found to perform best and was used to translate a total of 90,548 Russian sentences from the Taiga corpus.
+
+\subsection{Model Selection for Russian--Buryat Machine Translation}
+
+Given the low-resource nature of the Buryat language, selecting an appropriate neural architecture is critical for achieving reasonable translation quality. When selecting the model architecture, we opted for encoder-decoder type, as the cross-attention mechanism enables the model to better capture dependencies within the input and incorporate contextual information during decoding — a crucial aspect in machine translation. Experimental results presented in \citet{raffel2023exploringlimitstransferlearning} and \citet{fu2023decoderonlyencoderdecoderinterpretinglanguage} have shown that encoder-decoder models consistently outperform decoder-only architectures in translation tasks.
+
+The first model selected for training on the Russian–Buryat parallel corpus was Google’s \texttt{mt5-large}. This model was chosen due to its strong performance on machine translation tasks and broad multilingual support, including related languages such as Mongolian, making it a suitable candidate for low-resource scenarios.
+
+The second model, \texttt{nllb-200-distilled-600M} by Meta (formerly Facebook), was specifically designed for multilingual machine translation with a focus on low-resource languages. Its compact architecture and high translation efficiency, as demonstrated in the model comparison presented in Section~\ref{subsec:ru_mn_corpus_creation}, make it particularly well suited to the task at hand.
+
+
+\subsection{Final Training Procedure}
+Before initiating the main training process, it was necessary to update the tokenizer vocabulary by incorporating new tokens specific to the Buryat language, which is not included in the original models. For well-represented languages in the training data, it is typical for each word to correspond to 2–3 tokens on average. However, Buryat words are segmented into a significantly larger number of tokens, indicating insufficient vocabulary coverage.
+
+To address this, we utilized a Buryat monolingual corpus to extend the tokenizer. We used a dedicated dataset, described in Section ~\ref{subsec: web_based_parallel}, and supplemented it with Buryat sentences extracted from the training data. A new SentencePiece tokenizer was trained on this combined corpus.
+
+The missing tokens identified in the newly trained tokenizer were then added to the original vocabulary of the NLLB tokenizer. Corresponding embedding vectors were initialized and appended to the model's embedding layer, ensuring that the model could represent and learn these new units during training.
+
+The roles of language tags are crucial to the NLLB tokenizer. These special tokens are added to the beginning of source and target sentences to explicitly indicate the language. For Russian–Buryat translation, we added the tag \texttt{bxr\_Cyrl} to both the tokenizer and the model configuration.
+
+Following this preparation, we proceeded with training the neural machine translation models. Training was performed in both directions (Russian–Buryat and Buryat–Russian), with the direction chosen randomly for each batch. Details of the training corpus, hyperparameter settings, and results are provided in Section~\ref{sec:experiments}.
+
+\section{Experiments}
+\label{sec:experiments}
+
+\begin{table*}
+  \centering
+  \begin{tabular}{l|rr|rr}
+\hline
+ & \multicolumn{2}{c|}{ru-bxr} & \multicolumn{2}{c}{bxr-ru} \\
+ \hline
+\textbf{model} & \textbf{BLEU} & \textbf{ChrF++} & \textbf{BLEU} & \textbf{ChrF++} \\
+\hline
+Fine-tuned NLLB-v0                      & 6.56 & 22.14 & 1.31 & 10.00 \\
+Fine-tuned NLLB-v1                      & 18.74 & 46.17 & 32.20 & 53.37 \\
+Fine-tuned mT5-v1                       & 12.49 & 39.39 & 14.47 & 37.28 \\
+Fine-tuned NLLB-v2 (last)               & \textbf{20.61} & \textbf{48.68} & \textbf{35.43} & \textbf{56.21} \\
+Google Translate                        & 8.93 & 37.61 & 29.58 & 52.35 \\
+Claude 3.5 Sonnet 20240620              & 8.00 & 34.80 & 25.12 & 52.03 \\
+\hline
+\end{tabular}
+  \caption{Evaluation of our and Google Translate model on test-set}
+  \label{tab:evaluation}
+\end{table*}
+
+
+
+We now turn to the experimental setup. Multiple versions of the \texttt{mt5-large} and \texttt{nllb-200-distilled-600M} models were trained. Each version was trained on an incrementally larger dataset, as the Russian–Buryat parallel corpus was continuously updated with newly translated sentence pairs.
+
+For both models, the following hyperparameters were used:
+\begin{itemize}
+\item Batch size: 16
+\item Maximum sequence length: 512
+\item Number of training steps: 60,000
+\end{itemize}
+
+To evaluate translation quality, we used the BLEU and ChrF++ metrics, which are widely adopted in machine translation research.
+
+The \texttt{mt5-large} model was pre-trained on the Russian–Mongolian parallel corpus described in Section~\ref{subsec:ru_mn_corpus_creation}.
+
+In contrast, no additional pretraining was applied to the NLLB model, as it demonstrated strong performance during the Russian–Mongolian model comparison and achieved results comparable to the \texttt{facebook/nllb-200-1.3B} model used to generate the synthetic corpus.
+
+The training results of all model versions are presented in Table~\ref{tab:evaluation}.
+
+The initial version of the model, referred to as \texttt{Fine-tuned NLLB-v0}, was trained before the manual translation process had begun. As a result, this version did not include any of the high-quality human-translated data. This limitation affected the overall translation quality, but the model served as a useful baseline for evaluating the impact of incorporating manually translated content in later versions.
+
+Starting from the first version, manually translated data was incorporated into the training set. Additionally, we refined the regular expressions used for mining data from the dictionary and introduced back-translated data generated by Claude. 
+As expected, translation quality improved with each iteration. At the first stage, based on the observed performance, we decided to continue using only the NLLB-based model for further development. Once additional manually translated data became available, we trained the second version of the NLLB model, which, at the time of writing, represents the latest iteration. This version achieved the best results for Russian–Buryat translation. 
+
+To assess the performance of our model \texttt{Fine-tuned NLLB-v2}, we compared against publicly available systems: Google Translate and Claude 3.5 Sonnet. As shown in Table~\ref{tab:evaluation}, our model outperforms both baselines in both directions (Russian–Buryat and Buryat–Russian), achieving ablhigher scores in both BLEU and ChrF++.
+
+Translation performance varies across text types and directions (Table~\ref{tab:evaluation_sources}). The NLLB-v2 model achieved higher scores on manual translations, likely because it is most familiar with this domain. In the case of Bible texts, Google Translate performs best in the Buryat-to-Russian direction—possibly due to similar phrasing in its training corpus—while NLLB is stronger in the opposite direction. Phrasebook examples result in the lowest scores overall, which could be explained by their short length, limited context, and the frequent presence of set expressions, all of which make them difficult to translate reliably. In literary and legal texts, NLLB-v2 and Claude show similar performance in the Buryat-to-Russian direction, though reasons remain unclear. It is possible that Claude  was trained on similar data.
+
+
+\begin{table*}
+\centering
+\begin{tabular}{l|l|rr|rr}
+\hline
+\multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{2}{c|}{ru-bxr} & \multicolumn{2}{c}{bxr-ru} \\
+\hline
+\textbf{Source Type} & \textbf{Model}         & \textbf{BLEU} & \textbf{ChrF++} & \textbf{BLEU} & \textbf{ChrF++} \\
+\hline
+Manual translations           & Fine-tuned NLLB-v2     & \textbf{21.88}  & \textbf{52.15}   & \textbf{38.10}   & \textbf{60.20} \\
+                              & Google Translate       & 8.56  & 39.18   & 23.69   & 52.31 \\
+                              & Claude 3.5 Sonnet 20240620  & 9.43  & 38.40   & 33.42   & 59.43 \\
+\hline
+The Bible                     & Fine-tuned NLLB-v2     & \textbf{20.49}  & \textbf{47.56}   & 40.07   & 57.57 \\
+                              & Google Translate       & 10.00  & 36.83   & \textbf{54.36}  & \textbf{68.61} \\
+                              & Claude 3.5 Sonnet 20240620  & 3.67  & 29.10   & 11.72   & 37.29 \\
+\hline
+Phrasebooks                   & Fine-tuned NLLB-v2     & \textbf{6.25}  & \textbf{28.69}   & \textbf{11.20}   & 30.89 \\
+                              & Google Translate       & 5.94  & 25.74   & 8.33   & 28.75 \\
+                              & Claude 3.5 Sonnet 20240620  & 4.43  & 25.82   & 8.43   & \textbf{31.64} \\
+\hline
+Literature and regulations    & Fine-tuned NLLB-v2     & \textbf{16.83}  & \textbf{39.86}   & 18.01   & 40.48 \\
+                              & Google Translate       & 9.18  & 36.12   & 13.20   & 37.45 \\
+                              & Claude 3.5 Sonnet 20240620  & 9.40  & 33.93   & \textbf{24.94}   & \textbf{49.64} \\
+\hline
+\end{tabular}
+\caption{Evaluation of our model and Google Translate on test-set by source types.}
+\label{tab:evaluation_sources}
+\end{table*}
+
+It is important to note, however, that both the training and test sets used in our experiments were derived from the same pool of source texts, although split and processed independently. While this setup allows or stable evaluation, it may introduce a slight bias in favor of our model due to potential domain similarity. 
+Still, the consistent advantage in scores suggests that our model performs better for Russian–Buryat translation than Google Translate and Claude, particularly in the Russian-to-Buryat direction.
+
+\section{Online translator}
+
+To make our machine translation model accessible to the public, we released it online\footnote{\url{http://91.224.86.126/}}. Figure~\ref{fig:translator-site} demonstrates the graphic user interface of the translator.
+To make the model suitable for usage in web, we made quantization of the model with ctranslate \citep{klein-etal-2020-opennmt}. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{figures/online-translator.png}
+    \caption{Graphic user interface of online translator}
+    \label{fig:translator-site}
+\end{figure}
+
+\section{Conclusion}
+
+In this work, we introduce a Buryat-Russian machine translation model, along with a parallel corpus of 127K sentence pairs and a monolingual Buryat corpus of 214K sentences. All resources are publicly released to support further research in low-resource language technologies.
+
+Our model shows slightly better performance compared to Google Translate's Buryat-Russian system on our test dataset. Native speakers have evaluated the translations as acceptable for practical use.
+
+We hope that this work will contribute to the development of computational linguistics for the Buryat language and provide a foundation for future research. By making these resources available, we aim to support efforts toward the preservation and promotion of Buryat in the digital domain.
+
+
+\section*{Limitations}
+
+Machine translation systems for Buryat have great potential to support language learning and increase the availability of content in Buryat. However, these systems are not without significant limitations that need to be addressed.
+
+A major concern is the accuracy of translations. Machine translation often makes mistakes, such as generating non-existent words, providing incorrect definitions, or producing grammatical errors. These inaccuracies can lead to misunderstandings and may even influence the language negatively if users unknowingly adopt incorrect forms. Additionally, the current model is still under development and cannot yet be fully trusted. Users are advised to double-check translations, especially in critical contexts, as over-reliance on automated systems can result in errors being propagated.
+
+Another challenge is the lack of representation of Buryat dialects. Most models are trained on the literary standard of the language, leaving out the rich diversity of regional variations. This focus on a single dialect makes it harder for speakers of other dialects to benefit from the system and limits learners' exposure to the full range of linguistic expression within the Buryat language.
+
+Cultural and contextual nuances also present difficulties. Machine translation struggles with idiomatic expressions, metaphors, and culturally specific references, which can lead to mistranslations or loss of meaning. For a language like Buryat, which carries deep cultural significance, this limitation can hinder effective communication.
+
+Finally, the scarcity of high-quality training data further restricts the system’s capabilities. Limited and imbalanced datasets can introduce biases and reduce performance, particularly in informal or specialized contexts. Addressing these challenges will require expanded and more diverse datasets, as well as ongoing refinement of the model.
+
+While machine translation systems offer valuable support for Buryat, careful attention must be paid to these limitations to ensure their responsible and effective use.
+
+
+\section*{Acknowledgments}
+
+We would like to thank the translators who contributed to this project, as well as The State Translation Service of the Republic of Buryatia and The Buryat Research Center of the Siberian Branch of the Russian Academy of Sciences for providing parallel data. We are also grateful to David Dale for his great work on open-source low-resource translation.
+
+Finally, we thank our relatives for their help in evaluating the models and for their support during the study.
+
+
+
+% Bibliography entries for the entire Anthology, followed by custom entries
+%\bibliography{anthology,custom}
+% Custom bibliography entries only
+\bibliography{latex/custom}
+
+
+% \appendix
+% \section{Prompt}
+% \label{app:prompt}
+% The prompt used for translations with Claude 3.5 Sonnet: 
+% "Переведи предложение с бурятского на русский язык. Переведенное предложение должно содержать созимеримое количество слов, не пропускай никаких частей исходного текста. В ответе только перевод."
+
+
+\nocite{Ando2005,andrew2007scalable,rasooli-tetrault-2015}
+
+
+\end{document}
+```

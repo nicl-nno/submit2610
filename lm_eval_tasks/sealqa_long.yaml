@@ -1,0 +1,8 @@
+# --include_path lm_eval_tasks
+# The LONGSEAL task (the long-context SealQA variant, k=12) for the final
+# benchmarking. A class task (sealqa_long.SealQALong): the 12_docs documents
+# are folded into the prompt, over-long examples are dropped by the Meno
+# tokenizer in download() (not left-truncated). Plug it in via
+# --include_path lm_eval_tasks running lm_eval from the repo checkout root.
+task: sealqa_long
+class: !function sealqa_long.SealQALong

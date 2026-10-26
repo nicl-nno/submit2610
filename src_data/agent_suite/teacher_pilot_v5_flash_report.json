@@ -1,0 +1,26 @@
+{
+ "by_family": {
+  "extraction": {
+   "accepted": 7,
+   "mean_latency_s": 166.3,
+   "mean_tokens": 18500,
+   "n": 7
+  },
+  "qa": {
+   "accepted": 7,
+   "mean_latency_s": 111.1,
+   "mean_tokens": 17839,
+   "n": 7
+  },
+  "summary": {
+   "accepted": 6,
+   "mean_latency_s": 216.0,
+   "mean_tokens": 42680,
+   "n": 6
+  }
+ },
+ "envelope_acceptance": 1.0,
+ "gate_pass": true,
+ "n": 20,
+ "schedule_adherence": 1.0
+}

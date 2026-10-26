@@ -1,0 +1,40 @@
+# lm-eval 0.4.13
+# HotpotQA).
+# The HotpotQA task (distractor) for the paper's scaling ladder: upstream
+# lm-eval 0.4.13 has no such task, so it is defined here and plugged in via
+# --include_path lm_eval_tasks. The validation split is scored (test is
+# hidden); the ladder protocol: greedy, seed 42, a --limit 1000 slice. The
+# prompt and metric implementation live in hotpotqa.py (SQuAD-style EM/F1
+# following the official HotpotQA script).
+task: hotpotqa
+dataset_path: hotpotqa/hotpot_qa
+dataset_name: distractor
+test_split: null
+validation_split: validation
+fewshot_split: null
+output_type: generate_until
+doc_to_text: !function hotpotqa.doc_to_text
+doc_to_target: !function hotpotqa.doc_to_target
+generation_kwargs:
+  do_sample: false
+  temperature: 0.0
+  max_gen_toks: 512
+  until:
+    - "<|im_end|>"
+    - "</s>"
+    - "<|endoftext|>"
+filter_list:
+  - name: "scoring"
+    filter:
+      - function: remove_whitespace
+      - function: "take_first"
+process_results: !function hotpotqa.process_results
+metric_list:
+  - metric: em
+    aggregation: mean
+    higher_is_better: true
+  - metric: f1
+    aggregation: mean
+    higher_is_better: true
+metadata:
+  version: 1.0

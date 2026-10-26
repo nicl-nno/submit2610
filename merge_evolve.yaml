@@ -1,0 +1,130 @@
+#
+# Evolutionary merging of the Meno-Lite 0.2 checkpoints (mergekit-evolve,
+# CMA-ES). Runs on the compute-node node — see merge_evolve_slurm.sh (the vllm_env
+# env). Task names and metrics are verified against the lm-evaluation-harness
+# sources (the main branch and the v0.4.6 tag — the version compatible with
+# the node's stack).
+
+genome:
+  models:
+    - /path/to/storage/models/meno-lite-0.2-checkpoints/sft-full/best-merged
+    - /path/to/storage/models/meno-lite-0.2-checkpoints/sft-full/last-merged
+    - /path/to/storage/models/meno-lite-0.1.1
+  merge_method: dare_ties
+  base_model: /path/to/storage/models/meno-lite-0.1
+  tokenizer_source: base
+  # Meno-Lite has 28 layers: layer_granularity must divide 28 (1/2/4/7/14/28).
+  # Search space: 7 layer groups x 3 models x 2 parameters (weight, density)
+  # = 42 CMA-ES dimensions.
+  layer_granularity: 4
+  # --max-fevals). false
+  # The mergekit default for dare_ties: normalized weights keep the candidates
+  # in the definitely-valid region (faster convergence under a finite
+  # --max-fevals budget). false lifts the constraint — a deliberate choice.
+  normalize: false
+
+tasks:
+  # (jsonschema_bench, ifeval, mgsm_direct_ru, belebele_rus_Cyrl, qasper_*,
+  # scrolls_*)
+  # drift_probe
+  # mutual
+  # The evolution tasks do NOT overlap the final benchmarking tasks
+  # (jsonschema_bench, ifeval, mgsm_direct_ru, belebele_rus_Cyrl, qasper_*,
+  # scrolls_*) — optimizing against future test sets is excluded. The
+  # drift_probe task is a synthetic instruction-following probe: by
+  # construction it is not IFEval, the invariant holds (see the task
+  # comment). Metrics:
+  # fda/swde report contains (not f1!), mutual — r@1 (not acc), the
+  # unscramble family — exact_match (not acc); xquad/tydiqa use the Russian
+  # subtasks. Request setup: 10 of the 12 tasks are purely generative
+  # (generate_until); mutual is
+  # multiple_choice (all four options ranked by loglikelihood — the
+  # r@1/r@2/mrr metrics need nothing less); squadv2 is hybrid (answer
+  # generation + the " unanswerable" loglikelihood for the SQuAD v2
+  # abstention probability). The mergekit-evolve vLLM backend serves BOTH
+  # request types (loglikelihood via prompt_logprobs), and the SMOKE gate
+  # exercises all three patterns before the long run.
+  - name: xquad_ru
+    weight: 2.0
+    metric: "f1,none"
+  - name: tydiqa_goldp_ru
+    weight: 2.0
+    metric: "f1,none"
+  - name: fda
+    weight: 2.0
+    metric: "contains,none"
+  - name: swde
+    weight: 1.5
+    metric: "contains,none"
+  - name: mutual
+    weight: 1.5
+    metric: "r@1,none"
+  - name: cycle_letters
+    weight: 1.0
+    metric: "exact_match,none"
+  - name: squadv2
+    # The f1 scale here is 0-100 (the evaluate/squad_v2 HF metric multiplies
+    # by 100), while the other ten tasks report 0-1 metrics (source
+    # audited: boolean means and token-F1 fractions). The 0.005 weight =
+    # 0.5/100 keeps the intended relative share of the EN control in the
+    # CMA-ES score.
+    weight: 0.005
+    metric: "f1,none"
+  - name: drop
+    weight: 0.5
+    metric: "f1,none"
+  - name: coqa
+    weight: 0.5
+    metric: "f1,none"
+  - name: sealqa_hard
+    # SealQA (arXiv:2506.01062
+    # (0–5 %)
+    # «contains»
+    # SealQA (arXiv:2506.01062): a challenge benchmark of search skills,
+    # 254 questions without documents. For the 14B class the signal is
+    # nearly flat (0–5 %) — a regression "canary" column ("don't break the
+    # search skills"), not a strong selection gradient. The "contains"
+    # metric is a deterministic proxy of the official "relaxed exact match"
+    # (see lm_eval_tasks/sealqa.py). It does not overlap the final bench
+    # (the invariant holds); the dataset revision is pinned.
+    weight: 1.0
+    metric: "contains,none"
+  - name: sealqa_0
+    # The 111 hardest SealQA questions: frontier non-reasoning models score
+    # ~0 %. Meno-Lite is expected at ~0 — the column barely moves, hence the
+    # small weight. The metric and caveats are the same as sealqa_hard.
+    weight: 0.5
+    metric: "contains,none"
+  - name: drift_probe
+    # (llm_training/runtime/drift_probe.py
+    # The drift probe: 76 synthetic machine-checkable instructions (9
+    # types: word counts, no commas, JSON keys, keyword frequency, the
+    # answer language) — the same instrument as the sft_train/grpo_train
+    # degradation control (llm_training/runtime/drift_probe.py).
+    # Motivation: the 2026-09 attribution showed the parent models losing
+    # ~15 pp on IFEval — an aspect the selection criterion did not guard.
+    # No leak: the prompts are synthetic (scripts/build_drift_probe.py) and
+    # by construction are not IFEval — the "evolution ≠ final benchmarking"
+    # invariant holds; the independent measurement stays with the
+    # final-bench IFEval (from now on the probe is an optimized objective
+    # of the merge line, not an independent check). The 0.5 weight is the
+    # low-weight control-task class: 76 items carry a ~±5.5 pp binomial
+    # noise with a negligible contribution to the total-score noise (the
+    # sealqa_0 analogue). The data (src_data/drift_probe.jsonl) is frozen
+    # for a run series: regeneration breaks score comparability.
+    weight: 0.5
+    metric: "probe_acc,none"
+
+# squadv2+drop+coqa
+# The first N examples of every task (deterministic, no shuffle): the full
+# squadv2+drop+coqa amount to ~29 thousand examples per candidate — the cap
+# speeds the evaluation up and never touches the final benchmarking (which
+# runs separately, on the full sets).
+limit: 1000
+
+# shuffle = false
+# Everything else stays at the EvolMergeConfiguration defaults:
+# apply_chat_template and fewshot_as_multiturn = true (Meno is a chat model),
+# random_init = false (CMA-ES starts from the uniform mean: weight = 1/3,
+# density = 1), shuffle = false. The seed comes from the --random-seed CLI
+# flag.
